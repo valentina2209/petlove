@@ -1,16 +1,29 @@
-# React + Vite
+# PetLove 🐶🐱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**PetLove** — це сучасна платформа для пошуку домашніх улюбленців та оголошень. Проєкт розроблений з використанням найкращих практик фронтенд-розробки для забезпечення швидкості та зручності користувачів.
 
-Currently, two official plugins are available:
+## 🛠 Стек технологій
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Framework**: [React 19](https://react.dev/) ⚛️
+- **Build Tool**: [Vite](https://vitejs.dev/) ⚡
+- **State Management**: [Redux Toolkit](https://redux-toolkit.js.org/) 🏪
+- **Language**: [TypeScript](https://www.typescriptlang.org/) 📘
+- **Styling**: CSS Modules 🎨
+- **Validation**: React Hook Form + Yup ✅
 
-## React Compiler
+## 🏗 Архітектура
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Проєкт побудований за методологією **Feature-Sliced Design (FSD)**. Це допомагає зробити код масштабованим та легким у підтримці. Структура `src` включає:
 
-## Expanding the ESLint configuration
+- `app/`: ініціалізація додатку, провайдери та глобальні стилі.
+- `pages/`: компоненти сторінок.
+- `widgets/`: складні компоненти, що об'єднують фічі та сутності.
+- `features/`: функціональні частини, що несуть бізнес-цінність (напр., авторизація).
+- `entities/`: бізнес-сутності (напр., улюбленці, новини).
+- `shared/`: універсальні UI-компоненти, хуки та API.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Як запустити
+
+1. Клонуйте репозиторій.
+2. Встановіть залежності: `npm install`.
+3. Запустіть проєкт у режимі розробки: `npm run dev`.
