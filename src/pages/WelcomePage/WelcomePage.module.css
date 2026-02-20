@@ -1,0 +1,27 @@
+.wrapper {
+  position: relative;
+  width: 100vw; /* Використовуємо саме vw, щоб форсувати ширину вікна */
+  height: 100vh; /* Використовуємо саме vh для висоти вікна */
+  overflow: hidden;
+}
+
+.backgroundImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Додаємо стилі для внутрішньої картинки всередині picture */
+.backgroundImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.logoLink {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

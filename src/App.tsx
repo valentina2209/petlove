@@ -1,13 +1,15 @@
+import { Routes, Route } from 'react-router-dom';
+import { WelcomePage } from '@/pages/WelcomePage/WelcomePage';
+import './index.css';
 import HomePage from './pages/HomePage/HomePage';
-import { Routes, Route, Navigate } from 'react-router-dom';
 
-const App = () => {
+function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/home" replace />} />
+      <Route path="/" element={<WelcomePage />} />
       <Route path="/home" element={<HomePage />} />
     </Routes>
   );
-};
+}
 
 export default App;
