@@ -12,7 +12,7 @@ export const WelcomePage = () => {
       />
       <Link to="/home" className={styles.logoLink}>
         <AppPicture 
-          {...IMAGES.logo}
+          {...IMAGES.logoWhite}
           className={styles.logoImg}
         />
       </Link>

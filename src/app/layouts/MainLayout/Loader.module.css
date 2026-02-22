@@ -1,0 +1,85 @@
+.loaderOverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  z-index: 9999;
+
+  /* (Mobile First) 📱 */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('@/shared/assets/images/mobile/MainMob.png');
+}
+
+/* Для планшетів 📑 */
+@media (min-width: 768px) {
+  .loaderOverlay {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url('@/shared/assets/images/tablet/MainTab.png');
+  }
+}
+
+/* Для десктопів 🖥️ */
+@media (min-width: 1280px) {
+  .loaderOverlay {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url('@/shared/assets/images/desktop/MainDes.png');
+  }
+}
+
+.loaderContent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 270px;
+}
+
+@media (min-width: 768px) {
+  .loaderContent {
+    width: 396px;
+    height: 396px;
+  }
+}
+
+.circleProgress {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.svgCircle {
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(175.29deg);
+  transform-origin: center;
+  opacity: 0.3;
+}
+
+.percent {
+  position: relative;
+  z-index: 10;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+
+  font-size: 44px;
+}
+
+@media (min-width: 768px) {
+  .percent {
+    font-size: 72px;
+  }
+}

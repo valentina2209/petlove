@@ -6,6 +6,8 @@ import MainDes from '@/shared/assets/images/desktop/MainDes.png';
 import MainDes2x from "@/shared/assets/images/desktop/MainDes2x.png";
 import logo from "@/shared/assets/images/desktop/logo.png"
 import logoMob from "@/shared/assets/images/mobile/logoMob.png"
+import logoSvg from "@/shared/assets/images/desktop/logoDesSvg.svg";
+import logoMobSvg from "@/shared/assets/images/mobile/logoMobSvg.svg";
 
 export const IMAGES = {
   welcomeScreen: {
@@ -14,9 +16,15 @@ export const IMAGES = {
     desktop: { src: MainDes, src2x: MainDes2x },
     alt: "Welcome background"
   },
-  logo: {
+  logoWhite: {
     mobile: { src: logoMob },
     desktop: { src: logo},
     alt: "PetLove Logo"
+  },
+  logo: {
+    desktop: { src: logoSvg },
+    mobile: { src: logoMobSvg },
+    alt: "PetLove Logo White"
   }
+
 };

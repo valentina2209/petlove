@@ -1,0 +1,218 @@
+/* ==================== 📱 MOBILE STYLES (Base) ==================== */
+
+.header {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  height: 72px;
+}
+
+.logo {
+  display: block;
+  width: 76px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo img,
+.logo svg {
+  width: 100%;
+  height: auto;
+}
+
+.rightSide {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.desktopNav,
+.authContainer {
+  display: none;
+}
+
+.burgerBtn {
+  display: flex;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.langBtn {
+  background: transparent;
+  border: 1px solid var(--border-default);
+  border-radius: 30px;
+  padding: 8px 12px;
+  font-family: var(--font-main);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.themeSwitch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.themeSwitch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: var(--color-white);
+  border: 1px solid var(--border-default);
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 2px;
+  background-color: var(--color-yellow);
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.burgerIcon {
+  /* За замовчуванням для мобілок (скрін 10) */
+  width: 32px;
+  height: 32px;
+  /* Додамо stroke, щоб іконка була видимою */
+  stroke: var(--color-black);
+  fill: none;
+}
+
+/* Якщо ми на Home — іконка біла */
+.homeVariant .burgerIcon {
+  stroke: var(--color-white);
+}
+
+/* ==================== 📑 TABLET (768px+) ==================== */
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 20px 32px;
+    height: 80px;
+  }
+
+  .authContainer {
+    display: flex; /* На планшеті кнопки входу з'являються */
+    gap: 8px;
+  }
+
+  .loginBtn,
+  .regBtn {
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+  }
+
+  .loginBtn {
+    background-color: var(--color-yellow);
+    color: var(--color-white);
+  }
+
+  .loginBtn:hover {
+    background: rgba(249, 176, 32, 1);
+  }
+
+  .regBtn {
+    background-color: var(--color-light-yellow);
+    color: var(--color-yellow);
+  }
+
+  .regBtn:hover {
+    background: rgba(251, 231, 193, 1);
+  }
+
+  .rightSide {
+    gap: 16px;
+  }
+
+  .burgerIcon {
+    /* Розмір для планшета (скрін 9) */
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ==================== 💻 DESKTOP (1280px+) ==================== */
+
+@media screen and (min-width: 1280px) {
+  .container {
+    padding: 20px 64px;
+  }
+
+  .logo {
+    width: 124px;
+  }
+
+  .burgerBtn {
+    display: none;
+  }
+
+  .desktopNav {
+    display: flex;
+    gap: 10px;
+  }
+
+  .navLink {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    border: 1px solid var(--border-default);
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-black);
+    transition: all 0.3s ease;
+  }
+
+  .navLink.active,
+  .navLink:hover {
+    border-color: var(--color-yellow);
+  }
+
+  /* Варіант для Home (помаранчевий фон) */
+  .homeVariant .navLink {
+    color: var(--color-white);
+    border-color: var(--border-white);
+  }
+
+  .homeVariant .navLink.active {
+    border-color: var(--color-white);
+  }
+
+  .homeVariant .langBtn {
+    color: var(--color-white);
+    border-color: var(--border-white);
+  }
+}

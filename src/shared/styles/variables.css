@@ -1,0 +1,19 @@
+/* src/shared/styles/variables.css */
+
+:root {
+  /* Основні кольори з макета */
+  --color-black: #262626;
+  --color-yellow: #f6b83d;
+  --color-light-yellow: #fff4df;
+  --color-white: #ffffff;
+
+  /* Додаткові стани (можна додати пізніше) */
+  --color-yellow-hover: #f9b020;
+  --border-default: rgba(38, 38, 38, 0.15);
+  --border-white: rgba(255, 255, 255, 0.4);
+
+  /* Шрифти 📝 */
+  --font-main: 'Manrope', sans-serif;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}

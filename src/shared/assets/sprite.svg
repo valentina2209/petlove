@@ -124,5 +124,8 @@
         <symbol id="check" viewBox="0 0 22 22" fill="none">
             <path stroke-width="1.5" stroke="var(--color2, #08aa83)" stroke-linecap="round" stroke-linejoin="round" d="M18.3337 6.4167 8.2504 16.5 3.667 11.9167" />
         </symbol>
+        <symbol id="icon-burger" viewBox="0 0 32 32">
+            <path d="M4 8H28M4 16H28M4 24H28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </symbol>
     </defs>
 </svg>
