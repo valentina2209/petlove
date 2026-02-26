@@ -1,19 +1,18 @@
-import { Header } from "@/app/layouts/MainLayout/Header"
-import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
+import { Suspense } from "react";
 import Loader from "./Loader";
-
+import { Header } from "@/widgets/header/ui/Header";
 
 function MainLayout() {
     return (
-        <>
+        <div className="app-layout">
             <Header />
             <Suspense fallback={<Loader />}>
                 <main>
                     <Outlet />
                 </main>
             </Suspense>
-        </>
+        </div>
     );
 }
 

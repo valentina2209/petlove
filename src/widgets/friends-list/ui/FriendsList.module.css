@@ -1,0 +1,43 @@
+.wrapper {
+  width: 100%;
+  background: #f9f9f9;
+}
+
+.grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* 💥 КЛЮЧОВЕ */
+.item {
+  min-width: 0;
+}
+
+.message {
+  text-align: center;
+  font-size: 16px;
+  padding: 40px 0;
+}
+
+/* ================= TABLET ================= */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================= DESKTOP ================= */
+@media (min-width: 1280px) {
+  .wrapper {
+    padding-bottom: 40px;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 20px;
+  }
+}

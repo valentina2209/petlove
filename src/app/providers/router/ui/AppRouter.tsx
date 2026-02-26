@@ -1,11 +1,13 @@
 import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import MainLayout from "../../../layouts/MainLayout/MainLayout";
+import { NewsPage } from "@/pages/news/ui/NewsPage";
+import { FriendsPage } from "@/pages/friends/ui/FriendsPage";
 
-const WelcomePage = lazy(() => import("@/pages/WelcomePage/WelcomePage").then(module => ({ default: module.WelcomePage })));
+const WelcomePage = lazy(() => import("@/pages/welcome/WelcomePage").then(module => ({ default: module.WelcomePage })));
 const HomePage = lazy(() =>
     Promise.all([
-        import("@/pages/HomePage/HomePage"),
+        import("@/pages/home/HomePage"),
         new Promise(resolve => setTimeout(resolve, 10000))
     ]).then(([module]) => module)
 );
@@ -18,6 +20,8 @@ function AppRouter() {
 
             <Route element={<MainLayout />}>
                 <Route path="/home" element={<HomePage />} />
+                <Route path="/news" element={<NewsPage />} />
+                <Route path="/friends" element={<FriendsPage />} />
             </Route>
         </Routes>
     );

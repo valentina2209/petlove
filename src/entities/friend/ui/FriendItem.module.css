@@ -1,0 +1,118 @@
+/* ================= CARD ================= */
+
+.card {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  border-radius: 15px;
+  background: var(--color-white);
+  padding: 40px 20px 20px;
+  height: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ================= WORK TIME ================= */
+
+.workTime {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  font-size: 12px;
+  padding: 8px;
+  border-radius: 30px;
+
+  background: #fff4df;
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: #f6b83d;
+}
+
+/* ================= HEADER CONTENT ================= */
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* ================= CONTACTS ================= */
+
+.contacts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.contactItem {
+  display: flex;
+  border-radius: 15px;
+  gap: 4px;
+  align-items: baseline;
+  min-width: 0;
+  width: 100%;
+}
+
+.label {
+  white-space: nowrap;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+  flex-shrink: 0;
+}
+
+.link {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: #262626;
+
+  text-decoration: none;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  flex: 1;
+  min-width: 0;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

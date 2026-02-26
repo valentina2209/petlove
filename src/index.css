@@ -1,18 +1,61 @@
 @import './shared/styles/variables.css';
 
+/* 1. Скидання стандартних стилів браузера */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* 2. Базові налаштування висоти та шрифтів */
 html,
 body,
 #root {
-  height: 100%;
+  min-height: 100%; /* Використовуємо min-height замість height, щоб контент міг рости */
   width: 100%;
-  margin: 0;
-  padding: 0;
 }
+
 body {
+  font-family: var(--font-main), sans-serif;
+  background-color: var(--color-bg-page); /* Завжди використовуємо змінну фону сторінки */
+  color: var(--color-black);
+  background: #f9f9f9;
+  line-height: 1.5;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease; /* Плавна зміна теми */
+}
+
+/* 3. Універсальний контейнер (Mobile First) */
+.container {
+  width: 100%;
+  max-width: 375px; /* На мобілці на всю ширину */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Планшет */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+/* Десктоп */
+@media screen and (min-width: 1280px) {
+  .container {
+    /* Тут ми обмежуємо ширину контенту, але body навколо залишиться кольоровим */
+    max-width: 1280px;
+    padding: 0 32px;
+  }
+}
+
+/* Для ультрашироких моніторів (опціонально, щоб не було завеликих відступів) */
+@media screen and (min-width: 1920px) {
+  .container {
+    max-width: 1440px;
+  }
 }

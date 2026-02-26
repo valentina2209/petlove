@@ -1,15 +1,19 @@
 /* ==================== 📱 MOBILE STYLES (Base) ==================== */
 
 .header {
-  width: 100%;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 100;
 }
 
-.container {
+.innerContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  height: 72px;
 }
 
 .logo {
@@ -166,16 +170,12 @@ input:checked + .slider:before {
 /* ==================== 💻 DESKTOP (1280px+) ==================== */
 
 @media screen and (min-width: 1280px) {
-  .container {
-    padding: 20px 64px;
+  .innerContainer {
+    padding: 10px 60px 0 60px;
   }
 
   .logo {
-    width: 124px;
-  }
-
-  .burgerBtn {
-    display: none;
+    width: 105px;
   }
 
   .desktopNav {
@@ -184,35 +184,59 @@ input:checked + .slider:before {
   }
 
   .navLink {
-    display: inline-flex;
-    align-items: center;
-    padding: 12px 20px;
-    border: 1px solid var(--border-default);
+    border: 1px solid rgba(38, 38, 38, 0.15);
     border-radius: 30px;
+    padding: 15px 20px;
+    color: #262626;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--color-black);
-    transition: all 0.3s ease;
   }
 
-  .navLink.active,
-  .navLink:hover {
-    border-color: var(--color-yellow);
+  .navLink.active {
+    border: 1px solid #f6b83d;
   }
 
-  /* Варіант для Home (помаранчевий фон) */
-  .homeVariant .navLink {
-    color: var(--color-white);
-    border-color: var(--border-white);
+  .loginBtn {
+    border-radius: 30px;
+    padding: 15px 35px;
+    width: 119px;
+    height: 50px;
+    background: #f6b83d;
   }
 
-  .homeVariant .navLink.active {
-    border-color: var(--color-white);
+  .regBtn {
+    border-radius: 30px;
+    background: #fff4df;
   }
 
-  .homeVariant .langBtn {
-    color: var(--color-white);
-    border-color: var(--border-white);
+  .home {
+    background-color: transparent;
+  }
+
+  .home .navLink {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    color: white;
+    padding: 15px 20px;
+  }
+
+  .rightSide {
+    gap: 10px;
+  }
+
+  .home .loginBtn {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    padding: 15px 35px;
+  }
+
+  .home .regBtn {
+    background: #fff4df;
+    color: #f6b83d;
+    border-radius: 30px;
+    padding: 15px 20px;
+  }
+
+  .burgerBtn {
+    display: none;
   }
 }

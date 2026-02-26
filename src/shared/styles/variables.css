@@ -17,3 +17,18 @@
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 }
+:root {
+  /* Світла тема (дефолт) */
+  --color-bg-page: #ffffff;
+  --color-black: #262626;
+  --color-white: #ffffff;
+  --color-yellow: #f6b83d;
+  /* ... твої інші змінні ... */
+}
+
+/* Коли на body з'явиться атрибут [data-theme='dark'] */
+[data-theme='dark'] {
+  --color-bg-page: #1f1f1f; /* Темний фон для всього сайту */
+  --color-black: #ffffff; /* Текст стає білим */
+  /* Помаранчевий залишаємо, або робимо трохи м'якшим */
+}

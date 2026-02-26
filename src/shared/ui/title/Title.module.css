@@ -1,0 +1,43 @@
+.title {
+    font-weight: 700;
+    margin-bottom: 32px;
+}
+
+/* Sizes */
+.xl {
+    font-size: 40px;
+}
+
+.lg {
+    font-size: 32px;
+}
+
+.md {
+    font-size: 24px;
+}
+
+.sm {
+    font-size: 18px;
+}
+
+/* Variants */
+.primary {
+    color: #111;
+}
+
+.secondary {
+    color: #555;
+}
+
+.accent {
+    color: #f6b83d;
+}
+
+/* Align */
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}

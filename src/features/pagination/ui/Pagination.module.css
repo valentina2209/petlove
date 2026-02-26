@@ -1,0 +1,67 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.arrows,
+.pages {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.pageButton,
+.arrow {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Круглі кнопки як на макеті */
+  border: 1px solid #e0e0e0;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.pageButton:hover:not(.active),
+.arrow:hover:not(:disabled) {
+  border-color: #f1a533;
+  color: #f1a533;
+}
+
+.active {
+  background-color: #f1c40f; /* Жовтий колір з макета */
+  border-color: #f1c40f;
+  color: #fff;
+}
+
+.arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.dots {
+  color: #888;
+  padding: 0 4px;
+}
+
+.arrowIconRight {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    gap: 12px;
+  }
+  .pageButton,
+  .arrow {
+    width: 32px;
+    height: 32px;
+  }
+}

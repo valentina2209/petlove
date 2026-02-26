@@ -1,0 +1,39 @@
+/* FriendsPage.module.css */
+
+.wrapper {
+  /* Відступ під мобільний хедер */
+  padding-top: 80px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Заголовок "Our friends" */
+.wrapper h1 {
+  margin: 0;
+}
+
+.content {
+  width: 100%;
+}
+
+/* ================= TABLET ================= */
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    gap: 40px;
+  }
+}
+
+/* ================= DESKTOP ================= */
+
+@media (min-width: 1280px) {
+  .wrapper {
+    /* На десктопі хедер вищий, тому збільшуємо відступ */
+    padding: 120px 64px 0 64px;
+    gap: 60px;
+  }
+}

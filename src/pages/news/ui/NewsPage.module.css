@@ -1,0 +1,66 @@
+/* NewsPage.module.css */
+
+.page {
+  padding-top: 80px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #f9f9f9;
+}
+
+.searchWrapper {
+  width: 100%;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+/* ================= TABLET ================= */
+
+@media (min-width: 768px) {
+  .page {
+    padding-top: 100px;
+    gap: 32px;
+  }
+
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .searchWrapper {
+    max-width: 230px;
+  }
+}
+
+/* ================= DESKTOP ================= */
+
+@media (min-width: 1280px) {
+  .page {
+    padding: 120px 64px 60px 64px;
+    gap: 40px;
+  }
+
+  .header {
+    margin-bottom: 20px;
+  }
+
+  .searchWrapper {
+    max-width: 230px;
+  }
+}
+
+.page > :last-child {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
