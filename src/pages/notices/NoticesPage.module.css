@@ -1,0 +1,29 @@
+.pageTitle {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #262626;
+  margin-top: 0;
+  margin-bottom: 40px; /* Відступ до фільтрів */
+}
+
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 44px; /* Відступ від сітки карток */
+}
+
+/* --- TABLET & DESKTOP (від 768px і вище) --- */
+
+@media screen and (min-width: 768px) {
+  .pageTitle {
+    font-size: 54px; /* Великий шрифт як на макеті */
+    margin-bottom: 60px;
+    padding: 160px 64px 0 64px;
+  }
+
+  .paginationWrapper {
+    margin-top: 60px; /* Збільшений відступ на великих екранах */
+  }
+}

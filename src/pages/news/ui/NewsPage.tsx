@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useGetNewsQuery } from '@/entities/news/api/newsApi'
 import { SearchNews } from '@/features/search-news/ui/SearchNews'
-import { Pagination } from '@/features/pagination/ui/Pagination'
+import { Pagination } from '@/shared/ui/pagination/Pagination'
 import { NewsList } from '@/widgets/news-list/ui/NewsList'
 import { Title } from '@/shared/ui/title/Title'
 import css from "./NewsPage.module.css"

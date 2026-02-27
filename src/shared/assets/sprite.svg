@@ -119,13 +119,33 @@
             </defs>
         </symbol>
         <symbol id="crossSmall" viewBox="0 0 22 22" fill="none">
-            <path stroke-width="2" stroke="var(--color1, #ef2447)" stroke-linecap="round" d="M17.4163 4.5833 4.583 17.4167M4.5831 4.5833 17.4163 17.4167" />
+            <path stroke-width="2" stroke="var(--color1, #fff)" stroke-linecap="round" d="M17.4163 4.5833 4.583 17.4167M4.5831 4.5833 17.4163 17.4167" />
         </symbol>
         <symbol id="check" viewBox="0 0 22 22" fill="none">
             <path stroke-width="1.5" stroke="var(--color2, #08aa83)" stroke-linecap="round" stroke-linejoin="round" d="M18.3337 6.4167 8.2504 16.5 3.667 11.9167" />
         </symbol>
         <symbol id="icon-burger" viewBox="0 0 32 32">
             <path d="M4 8H28M4 16H28M4 24H28" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="icon-star" viewBox="0 0 18 18">
+            <path 
+                d="M9 1.5L11.655 6.18L17 7.245L13.125 10.965L13.995 16.5L9 14.1L4.005 16.5L4.875 10.965L1 7.245L6.345 6.18L9 1.5Z" 
+                stroke="#ffc531" 
+                stroke-width="1.5" 
+                stroke-linecap="round" 
+                stroke-linejoin="round"
+                fill="#ffc531"
+            />
+        </symbol>
+        <symbol id="icon-heart" viewBox="0 0 18 18">
+            <path 
+                d="M15.63 3.1125C14.8856 2.368 13.8756 1.95 12.822 1.95C11.7684 1.95 10.7584 2.368 10.014 3.1125L9 4.1265L7.986 3.1125C7.2416 2.368 6.2316 1.95 5.178 1.95C4.1244 1.95 3.1144 2.368 2.37 3.1125C0.814 4.6685 0.814 7.1895 2.37 8.7455L9 15.375L15.63 8.7455C17.186 7.1895 17.186 4.6685 15.63 3.1125Z" 
+                stroke="#f6b83d" 
+                stroke-width="1.5" 
+                stroke-linecap="round" 
+                stroke-linejoin="round"
+                fill="none"
+            />
         </symbol>
     </defs>
 </svg>

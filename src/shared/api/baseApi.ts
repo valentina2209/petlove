@@ -7,7 +7,7 @@ export const baseApi = createApi({
    baseUrl: 'https://petlove.b.goit.study/api',
   }),
 
-  tagTypes: ['News', 'Friends'],
+  tagTypes: ['News', 'Friends', 'Notices'],
 
   endpoints: () => ({}),
 })

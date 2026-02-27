@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import MainLayout from "../../../layouts/MainLayout/MainLayout";
 import { NewsPage } from "@/pages/news/ui/NewsPage";
 import { FriendsPage } from "@/pages/friends/ui/FriendsPage";
+import { NoticesPage } from "@/pages/notices/NoticesPage";
 
 const WelcomePage = lazy(() => import("@/pages/welcome/WelcomePage").then(module => ({ default: module.WelcomePage })));
 const HomePage = lazy(() =>
@@ -21,6 +22,7 @@ function AppRouter() {
             <Route element={<MainLayout />}>
                 <Route path="/home" element={<HomePage />} />
                 <Route path="/news" element={<NewsPage />} />
+                <Route path="/notices" element={<NoticesPage />} />
                 <Route path="/friends" element={<FriendsPage />} />
             </Route>
         </Routes>
