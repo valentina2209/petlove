@@ -1,0 +1,110 @@
+/* --- MOBILE FIRST --- */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Кругла аватарка собаки по центру */
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  background-color: #fff4df;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.iconWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #f6b83d; /* Помаранчевий колір як на макеті */
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+  color: #2b2b2b;
+  margin-bottom: 28px;
+}
+
+/* Блок з кнопками: на мобільних у стовпчик або в ряд залежно від ширини */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.loginBtn,
+.registerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 42px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+/* Log In: Помаранчева кнопка */
+.loginBtn {
+  background-color: #f6b83d;
+  color: #ffffff;
+}
+
+.loginBtn:hover {
+  background-color: #e5a52c;
+}
+
+/* Registration: Світло-помаранчева кнопка */
+.registerBtn {
+  background-color: #fff4df;
+  color: #f6b83d;
+}
+
+.registerBtn:hover {
+  background-color: #fbe7c1;
+}
+
+/* --- TABLET & DESKTOP (від 768px) --- */
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .text {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .actions {
+    flex-direction: row; /* Кнопки стають в один ряд */
+    gap: 10px;
+  }
+
+  .loginBtn,
+  .registerBtn {
+    height: 48px;
+    font-size: 16px;
+  }
+}

@@ -1,3 +1,4 @@
+import { formatDate } from "@/shared/utils/formatDate"
 import { Notice } from "../../notice/model/types"
 import css from "./NoticeItem.module.css"
 
@@ -37,7 +38,7 @@ export const NoticeItem = ({ notice, onLearnMore }: Props) => {
           </div>
           <div className={css.metaItem}>
             <span className={css.metaLabel}>Birthday</span>
-            <span className={css.metaValue}>{notice.birthday}</span>
+            <span className={css.metaValue}>{formatDate(notice.birthday)}</span>
           </div>
           <div className={css.metaItem}>
             <span className={css.metaLabel}>Sex</span>
