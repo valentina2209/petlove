@@ -1,0 +1,93 @@
+import { useState } from "react";
+// ... ваші імпорти
+
+export const RegistrationForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  
+  // ... логіка useForm
+
+  // Функція для визначення класу інпуту на основі помилки або успішного заповнення
+  const getInputClass = (fieldName: keyof FormValues) => {
+    if (errors[fieldName]) return css.errorInput;
+    // Якщо поле валідне і не порожнє (опціонально, залежить від watch)
+    return ""; 
+  };
+
+  return (
+    <div className={css.containerForm}>
+      <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
+        <h2 className={css.title}>Registration</h2>
+        <p className={css.subtitle}>Thank you for your interest in our platform.</p>
+
+        {/* Поле Name */}
+        <div className={css.inputWrapper}>
+          <input
+            placeholder="Name"
+            {...register("name")}
+            className={getInputClass("name")}
+          />
+          {errors.name && (
+            <svg className={css.statusIconError}><use href="/src/shared/assets/sprite.svg#icon-cross"></use></svg>
+          )}
+        </div>
+        {errors.name && <p className={css.errorText}>{errors.name.message}</p>}
+
+        {/* Поле Email */}
+        <div className={css.inputWrapper}>
+          <input
+            placeholder="Email"
+            {...register("email")}
+            className={getInputClass("email")}
+          />
+          {errors.email && (
+            <svg className={css.statusIconError}><use href="/src/shared/assets/sprite.svg#icon-cross"></use></svg>
+          )}
+        </div>
+        {errors.email && <p className={css.errorText}>{errors.email.message}</p>}
+
+        {/* Поле Password */}
+        <div className={css.inputWrapper}>
+          <input
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            {...register("password")}
+            className={errors.password ? css.errorInput : css.successInput} 
+          />
+          <div className={css.controls}>
+             {/* Галочка успіху як на скріншоті 29 */}
+            {!errors.password && <svg className={css.statusIconSuccess}><use href="/src/shared/assets/sprite.svg#icon-check"></use></svg>}
+            
+            <button type="button" onClick={() => setShowPassword(!showPassword)} className={css.eyeBtn}>
+              <svg className={css.eyeIcon}><use href={`/src/shared/assets/sprite.svg#icon-eye${showPassword ? '' : '-off'}`}></use></svg>
+            </button>
+          </div>
+        </div>
+        {errors.password ? (
+          <p className={css.errorText}>{errors.password.message}</p>
+        ) : (
+          <p className={css.successText}>Password is secure</p>
+        )}
+
+        {/* Поле Confirm Password */}
+        <div className={css.inputWrapper}>
+          <input
+            type={showConfirmPassword ? "text" : "password"}
+            placeholder="Confirm password"
+            {...register("confirmPassword")}
+            className={getInputClass("confirmPassword")}
+          />
+          <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)} className={css.eyeBtn}>
+             <svg className={css.eyeIcon}><use href={`/src/shared/assets/sprite.svg#icon-eye${showConfirmPassword ? '' : '-off'}`}></use></svg>
+          </button>
+        </div>
+        {errors.confirmPassword && <p className={css.errorText}>{errors.confirmPassword.message}</p>}
+
+        <button type="submit" className={css.button}>Registration</button>
+        <p className={css.loginLink}>
+          Already have an account? <a href="/login">Login</a>
+        </p>
+      </form>
+    </div>
+  );
+};

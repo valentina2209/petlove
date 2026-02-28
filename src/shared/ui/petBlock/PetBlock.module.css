@@ -1,0 +1,117 @@
+/* Контейнер всього блоку (ліва частина сторінки реєстрації) */
+.wrapper {
+  /* width: 100%; */
+  margin-right: 30px;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: flex-start; */
+}
+
+/* Контейнер для зображення з помаранчевим фоном та закругленням */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 612px;
+  height: auto;
+  min-height: 400px;
+  background-color: #f6b83d; /* Фірмовий помаранчевий колір */
+  border-radius: 60px; /* Велике закруглення кутів */
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Основне зображення тварини (кіт) */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Біла картка-бейдж, що накладається на фото */
+.badge {
+  position: absolute;
+  left: 32px;
+  bottom: 32px;
+  max-width: 294px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.badgeHeader {
+  display: flex;
+
+  gap: 12px;
+}
+
+/* Аватарка всередині картки */
+
+.avatarWrapper {
+  width: 60px;
+  height: 60px;
+  background-color: #fff4df; /* Світло-жовтий фон кола */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.avatar {
+  width: 32px; /* Розмір самої іконки тварини всередині кола */
+  height: 32px;
+}
+
+.infoRow {
+  align-items: baseline;
+  flex-grow: 1;
+}
+
+.wrapperText {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+/* Ім'я тварини */
+.petName {
+  font-weight: 700;
+  font-size: 16px;
+  color: #f6b83d;
+}
+
+.birthdayLabel {
+  font-size: 12px;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.birthdayValue {
+  color: #262626;
+  font-weight: 500;
+}
+
+/* Опис тварини */
+.badgeText {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.8);
+  margin: 0;
+}
+
+/* Адаптація для десктопа (згідно з макетом 26) */
+@media screen and (min-width: 1280px) {
+  .imageContainer {
+    height: 654px; /* Фіксована висота для великих екранів */
+  }
+
+  .badge {
+    left: 64px;
+    bottom: 64px;
+  }
+}

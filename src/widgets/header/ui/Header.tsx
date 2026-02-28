@@ -42,10 +42,18 @@ export const Header = () => {
                     {/* ACTIONS */}
                     <div className={css.rightSide}>
                         <div className={css.authContainer}>
-                            <button className={`${css.loginBtn} ${isHomePage ? css.loginWhite : css.loginOrange}`}>
+                            <NavLink
+                                to="/login"
+                                className={`${css.loginBtn} ${isHomePage ? css.loginWhite : css.loginOrange}`}
+                            >
                                 Log In
-                            </button>
-                            <button className={css.regBtn}>Registration</button>
+                            </NavLink>
+                            <NavLink
+                                to="/register"
+                                className={css.regBtn}
+                            >
+                                Registration
+                            </NavLink>
                         </div>
 
                         <button
