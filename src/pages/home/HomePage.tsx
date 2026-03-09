@@ -1,20 +1,21 @@
 import { IMAGES } from "@/shared/config/images";
 import { AppPicture } from "@/shared/ui/AppPicture";
+import { useLang } from "@/app/providers/LanguageProvider/LanguageProvider";
+import { translations } from "@/shared/config/i18n/translations";
 import css from "./HomePage.module.css";
 
 function HomePage() {
+  const { lang } = useLang()
+  const t = translations[lang]
   return (
-    <div className={css.pageWrapper}>
       <div className="container">
-
         <section className={css.heroTextSection}>
           <div className={css.content}>
             <h1 className={css.title}>
-              Take good <span>care</span> of your small pets
+              {t.heroTitle}<span>{t.defText}</span> {t.endText}
             </h1>
             <p className={css.description}>
-              Choosing a pet for your home is a choice that is meant to enrich your
-              life with immeasurable joy and tenderness.
+             {t.subTitle}
             </p>
           </div>
         </section>
@@ -24,7 +25,7 @@ function HomePage() {
           </div>
         </section>
       </div>
-    </div>
+    
   );
 }
 

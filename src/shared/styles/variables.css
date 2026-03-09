@@ -1,34 +1,23 @@
 /* src/shared/styles/variables.css */
 
 :root {
-  /* Основні кольори з макета */
   --color-black: #262626;
   --color-yellow: #f6b83d;
   --color-light-yellow: #fff4df;
   --color-white: #ffffff;
+  --color-bg-page: #f9f9f9;
 
-  /* Додаткові стани (можна додати пізніше) */
   --color-yellow-hover: #f9b020;
   --border-default: rgba(38, 38, 38, 0.15);
   --border-white: rgba(255, 255, 255, 0.4);
 
-  /* Шрифти 📝 */
   --font-main: 'Manrope', sans-serif;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
-}
-:root {
-  /* Світла тема (дефолт) */
-  --color-bg-page: #ffffff;
-  --color-black: #262626;
-  --color-white: #ffffff;
-  --color-yellow: #f6b83d;
-  /* ... твої інші змінні ... */
+  --header-height: 80px;
 }
 
-/* Коли на body з'явиться атрибут [data-theme='dark'] */
 [data-theme='dark'] {
-  --color-bg-page: #1f1f1f; /* Темний фон для всього сайту */
-  --color-black: #ffffff; /* Текст стає білим */
-  /* Помаранчевий залишаємо, або робимо трохи м'якшим */
+  --color-bg-page: #1f1f1f;
+  --color-black: #ffffff;
 }

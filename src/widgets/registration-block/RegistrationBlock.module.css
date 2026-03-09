@@ -1,5 +1,25 @@
 .wrapper {
   display: flex;
+  padding: 65px 40px 20px 40px;
+  gap: 20px;
   align-items: center;
-  padding: 100px 110px 20px 110px;
+  flex-direction: column;
+}
+
+/* Tablet (від 768px) */
+@media screen and (min-width: 768px) {
+  .wrapper {
+    padding: 70px 60px 20px 60px;
+    gap: 32px;
+  }
+}
+
+/* Desktop (від 1280px) */
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 20px;
+    padding: 90px 145px 10px 145px;
+  }
 }

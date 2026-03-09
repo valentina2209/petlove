@@ -9,11 +9,8 @@ export const FriendsPage = () => {
     return (
         <section className="container">
             <div className={css.wrapper}>
-                <Title size="xl">Our friends</Title>
-
-                <div className={css.content}>
-                    <FriendsList friends={friends} isLoading={isLoading} />
-                </div>
+                <Title className={css.title} size="xl">Our friends</Title>
+                <FriendsList friends={friends} isLoading={isLoading} />  
             </div>
         </section>
     )

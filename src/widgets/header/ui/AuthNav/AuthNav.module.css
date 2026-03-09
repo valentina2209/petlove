@@ -1,0 +1,40 @@
+.authNav {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .authNav {
+    display: flex;
+    gap: 10px;
+  }
+
+  .loginLink,
+  .registerLink {
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .loginLink {
+    padding: 15px 35px;
+    background-color: var(--color-yellow);
+    color: var(--color-white);
+  }
+
+  .loginLink:hover {
+    background: rgba(249, 176, 32, 1);
+  }
+
+  .registerLink {
+    padding: 15px 20px;
+    background-color: var(--color-light-yellow);
+    color: var(--color-yellow);
+  }
+
+  .registerLink:hover {
+    background: rgba(251, 231, 193, 1);
+  }
+}

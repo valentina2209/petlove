@@ -1,0 +1,59 @@
+.wrapperCard {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.sectionTitle {
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: #2b2b2a;
+}
+.addBtn {
+  border-radius: 30px;
+  padding: 10px 16px;
+
+  background: var(--color-yellow);
+  text-decoration: none;
+
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.emptyText {
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: var(--color-black);
+}
+
+@media screen and (min-width: 768px) {
+  .list {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .list {
+    display: flex;
+    flex-direction: column;
+  }
+}

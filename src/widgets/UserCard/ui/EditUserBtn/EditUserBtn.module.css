@@ -1,0 +1,14 @@
+.editBtn {
+  border-radius: 30px;
+  padding: 10px;
+  background: var(--color-light-yellow);
+  border: none;
+  cursor: pointer;
+  width: 38px;
+  height: 38px;
+}
+
+.iconPen {
+  width: 18px;
+  height: 18px;
+}

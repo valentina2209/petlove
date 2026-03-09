@@ -1,29 +1,31 @@
-.pageTitle {
+.wrapper {
+  padding: 100px 20px 40px 20px;
+}
+
+.title {
+  font-family: var(--font-main);
   font-weight: 700;
   font-size: 28px;
-  line-height: 1;
+  line-height: 100%;
   letter-spacing: -0.03em;
-  color: #262626;
-  margin-top: 0;
-  margin-bottom: 40px; /* Відступ до фільтрів */
+  color: var(--color-black);
 }
 
-.paginationWrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 44px; /* Відступ від сітки карток */
-}
-
-/* --- TABLET & DESKTOP (від 768px і вище) --- */
+/* --- TABLET --- */
 
 @media screen and (min-width: 768px) {
-  .pageTitle {
-    font-size: 54px; /* Великий шрифт як на макеті */
-    margin-bottom: 60px;
-    padding: 160px 64px 0 64px;
+  .wrapper {
+    padding: 120px 32px 40px 32px;
   }
+  .title {
+    font-size: 54px;
+  }
+}
 
-  .paginationWrapper {
-    margin-top: 60px; /* Збільшений відступ на великих екранах */
+/* --- DESKTOP ---*/
+
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    padding: 160px 64px 40px 64px;
   }
 }

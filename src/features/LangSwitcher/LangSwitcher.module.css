@@ -1,0 +1,44 @@
+.langBtn {
+  background: none;
+  border: none;
+  color: var(--color-black);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  gap: 4px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.active {
+  color: var(--color-yellow);
+}
+
+.divider {
+  opacity: 0.5;
+}
+
+.flagIcon {
+  width: 20px;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.langWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.text {
+  color: var(--color-black);
+}
+.textWhite {
+  color: var(--color-white);
+}
+
+.textBlack {
+  color: var(--color-black);
+}

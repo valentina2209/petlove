@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
-import Loader from "./Loader";
-import { Header } from "@/widgets/header/ui/Header";
+import Loader from "../Loader/Loader";
+import { Header } from "@/widgets/header/ui/Header/Header";
 
 function MainLayout() {
     return (

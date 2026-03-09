@@ -1,0 +1,182 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(38, 38, 38, 0.5);
+  z-index: 999;
+}
+
+.menuContent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: var(--color-yellow);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  width: 218px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.navLink {
+  font-size: 16px;
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  width: 100%;
+  text-align: center;
+}
+
+.navLink.active {
+  border-color: #ffffff;
+}
+
+.forceShowAuth :global(div),
+.forceShowAuth :global(nav),
+.forceShowAuth :global(button),
+.forceShowAuth :global(a) {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.authBlock {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.authBlock a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.authBlock a[href*='login'] {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.authBlock a[href*='register'] {
+  background-color: #ffffff;
+  color: #f6b83d;
+  border: 1px solid #ffffff;
+}
+
+.whiteBg {
+  background-color: #ffffff;
+}
+
+.yellowBg {
+  background-color: #f6b83d;
+}
+
+.closeIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.closeWhite {
+  stroke: #ffffff;
+}
+
+.closeBlack {
+  stroke: #262626;
+}
+
+.whiteBg .navLink {
+  color: #262626;
+  border: 1px solid rgba(38, 38, 38, 0.15);
+}
+
+.whiteBg .navLink.active {
+  border-color: #f6b83d;
+  color: #f6b83d;
+}
+
+.authBlock {
+  margin-top: auto;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.whiteBg .authBlock a[href*='login'] {
+  background-color: #f6b83d;
+  color: #ffffff;
+}
+
+.whiteBg .authBlock a[href*='register'] {
+  background-color: #fff4df;
+  color: #f6b83d;
+}
+
+/* Для темного фону (жовте меню) */
+.yellowBg :focus-visible {
+  outline: 2px solid #ffffff;
+}
+
+/* Для світлого фону (Home сторінка або білий хедер) */
+.whiteBg :focus-visible,
+.header :focus-visible {
+  outline: 2px solid #f6b83d;
+}
+
+@media screen and (min-width: 768px) {
+  .forceShowAuth :global(div),
+  .forceShowAuth :global(nav),
+  .forceShowAuth :global(button),
+  .forceShowAuth :global(a) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .menuContent {
+    width: 374px;
+    padding: 40px 48px;
+  }
+  .authBlock {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .authBlock a {
+    width: 150px;
+  }
+}

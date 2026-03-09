@@ -1,0 +1,63 @@
+.selectContainer :global(.customSelect__control) {
+  background-color: white !important;
+  border-radius: 30px;
+  padding: 12px 15px 12px 12px;
+  height: 42px;
+}
+
+.selectContainer :global(.customSelect__placeholder) {
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.03em;
+  color: var(--color-black);
+}
+
+.selectContainer :global(.customSelect__indicator-separator) {
+  display: none;
+}
+
+/* Стилі для випадаючого списку */
+.selectContainer :global(.customSelect__menu) {
+  border-radius: 15px;
+  border: none;
+  background: #fff;
+}
+
+.selectContainer :global(.customSelect__option) {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: rgba(38, 38, 38, 0.6);
+}
+
+.selectContainer :global(.customSelect__option--is-focused) {
+  color: #f6b83d !important;
+}
+
+@media screen and (min-width: 768px) {
+  .selectContainer :global(.customSelect__control) {
+    padding: 14px 15px 14px 14px;
+    width: 170px;
+    height: 48px;
+  }
+
+  .selectContainer :global(.customSelect__placeholder) {
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 129%;
+    letter-spacing: -0.03em;
+    color: var(--color-black);
+  }
+
+  .selectContainer :global(.customSelect__indicator-separator) {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .selectContainer :global(.customSelect__control) {
+    width: 180px;
+  }
+}

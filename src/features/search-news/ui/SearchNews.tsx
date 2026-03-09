@@ -20,7 +20,7 @@ export const SearchNews = ({ onSearch }: Props) => {
           className={css.input}
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          placeholder="Search..."
+          placeholder="Search"
         />
 
         <div className={css.actions}>

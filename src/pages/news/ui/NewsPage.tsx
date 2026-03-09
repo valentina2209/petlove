@@ -28,7 +28,7 @@ export const NewsPage = () => {
     <div className='container'>
       <div className={css.page}>
         <div className={css.header}>
-          <Title size='xl'>News</Title>
+          <Title className={css.title} size='xl'>News</Title>
           <div className={css.searchWrapper}>
             <SearchNews onSearch={handleSearch} />
           </div>

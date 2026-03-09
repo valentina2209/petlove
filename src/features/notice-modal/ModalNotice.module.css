@@ -134,7 +134,8 @@
 .heartIcon {
   width: 18px;
   height: 18px;
-  fill: none; /* Серце за замовчуванням прозоре (тільки контур) */
+  color: #fff;
+  fill: none;
 }
 
 .contactBtn {
@@ -155,10 +156,5 @@
   .contactBtn {
     height: 48px;
     font-size: 16px;
-  }
-
-  .heartIcon {
-    width: 30px;
-    height: 30px;
   }
 }

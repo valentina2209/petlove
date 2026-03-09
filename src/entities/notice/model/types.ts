@@ -10,10 +10,14 @@ export interface Notice {
   imgURL: string;
   popularity: number;
   location: string; 
-  price?: number; 
-  user: string; 
-  createdAt: string; 
+  price?: number;  
   updatedAt?: string; 
+  user?: {
+    _id: string;
+    phone: string;
+    email: string;
+  };     
+  createdAt?: string;
 }
 
 export interface NoticesResponse {

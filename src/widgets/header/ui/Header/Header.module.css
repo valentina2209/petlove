@@ -1,0 +1,173 @@
+/* ==================== 📱 MOBILE STYLES (Base) ==================== */
+
+.header {
+  height: var(--header-height);
+  position: relative;
+  z-index: 10;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.innerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  display: block;
+  width: 76px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo img,
+.logo svg {
+  width: 100%;
+  height: auto;
+}
+
+.rightSide {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.userWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.desktopOnly {
+  display: none;
+}
+
+.userIcon {
+  width: 40px;
+  height: 40px;
+  background-color: #fff5e6;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.desktopNav,
+.authContainer {
+  display: none;
+}
+
+.burgerBtn {
+  display: flex;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.burgerIcon {
+  width: 36px;
+  height: 36px;
+
+  stroke-width: 3px;
+  stroke: #262626;
+}
+
+.iconWhite {
+  stroke: #fff;
+}
+.iconBlack {
+  stroke: #262626;
+}
+
+.headerThemeSwitcher {
+  display: none;
+}
+
+/* ==================== 📑 TABLET (768px+) ==================== */
+
+@media screen and (min-width: 768px) {
+  .innerContainer {
+    padding: 0 32px;
+  }
+
+  .authContainer {
+    display: flex;
+    gap: 8px;
+  }
+
+  .rightSide {
+    gap: 16px;
+  }
+
+  .burgerIcon {
+    width: 36px;
+    height: 36px;
+    stroke-width: 3px;
+    stroke: #262626;
+  }
+
+  .iconWhite {
+    stroke: #fff;
+  }
+  .iconBlack {
+    stroke: #262626;
+  }
+
+  .headerThemeSwitcher {
+    display: none;
+  }
+}
+
+/* ==================== 💻 DESKTOP (1280px+) ==================== */
+
+@media screen and (min-width: 1280px) {
+  .innerContainer {
+    padding: 10px 60px 0 60px;
+  }
+
+  .logo {
+    width: 105px;
+  }
+
+  .desktopNav {
+    display: flex;
+    gap: 10px;
+  }
+
+  .navLink {
+    border: 1px solid rgba(38, 38, 38, 0.15);
+    border-radius: 30px;
+    padding: 15px 20px;
+    color: var(--color-black);
+    text-decoration: none;
+  }
+
+  .navLink.active {
+    border: 1px solid #f6b83d;
+  }
+
+  .home .navLink {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    color: white;
+    padding: 15px 20px;
+  }
+
+  .rightSide {
+    gap: 10px;
+  }
+
+  .burgerBtn {
+    display: none;
+  }
+
+  .headerThemeSwitcher {
+    display: flex;
+  }
+}

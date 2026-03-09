@@ -1,8 +1,7 @@
-/* MOBILE FIRST (за замовчуванням 1 колонка) */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 20px;
   list-style: none;
   grid-auto-rows: 1fr;
   padding: 0;
@@ -13,19 +12,19 @@
   width: 100%;
 }
 
-/* TABLET (від 768px — 2 колонки) */
 @media screen and (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px 20px;
+    gap: 32px;
+    width: 704px;
   }
 }
 
-/* DESKTOP (від 1280px — 3 колонки) */
 @media screen and (min-width: 1280px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 40px 32px;
+    width: 100%;
   }
 }
 

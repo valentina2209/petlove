@@ -1,0 +1,38 @@
+.wrapper {
+  position: relative;
+}
+
+.homeBtn {
+  position: absolute;
+  bottom: 260px;
+  left: 92px;
+  padding: 12px 30px;
+  background-color: #fff4df;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  color: #f6b83d;
+}
+
+.homeBtn:hover {
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 768px) {
+  .homeBtn {
+    bottom: 235px;
+    left: 270px;
+    padding: 14px 30px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .homeBtn {
+    bottom: 115px;
+    left: 520px;
+  }
+}

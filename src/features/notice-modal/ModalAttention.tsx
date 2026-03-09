@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import css from './ModalAttention.module.css';
 
-export const ModalAttention = () => {
+interface Props {
+  onClose: () => void; // Додай це, щоб TypeScript дозволив передавати onClose
+}
+
+export const ModalAttention = ({onClose} : Props) => {
   return (
     <div className={css.content}>
       <div className={css.iconWrapper}>

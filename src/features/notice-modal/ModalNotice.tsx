@@ -1,17 +1,42 @@
-import { Notice } from '@/entities/notice/model/types';
+import { useGetNoticeByIdQuery } from '@/entities/notice/api/noticesApi';
 import css from './ModalNotice.module.css';
 import { formatDate } from '@/shared/utils/formatDate';
+import { useAddFavoriteMutation, useGetCurrentUserQuery, useRemoveFavoriteMutation } from '@/entities/user/api/userApi';
 
 interface Props {
-  notice: Notice;
-  isFavorite: boolean;
-  onToggleFavorite: () => void;
+  id: string
+  onClose: () => void
 }
 
-export const ModalNotice = ({ notice, isFavorite, onToggleFavorite }: Props) => {
-   const displayPrice = notice.price && notice.price > 0
-    ? `$${notice.price}`
-    : "";
+export const ModalNotice = ({ id, onClose }: Props) => {
+  const { data: notice, isLoading } = useGetNoticeByIdQuery(id);
+  const { data: user } = useGetCurrentUserQuery(undefined);
+  
+  const [addFavorite] = useAddFavoriteMutation();
+  const [removeFavorite] = useRemoveFavoriteMutation();
+
+  const isFavorite = user?.noticesFavorites?.some((fav: any) => fav._id === id) ?? false;
+
+  if (isLoading) return <div className={css.loader}>Loading...</div>;
+  if (!notice) return null;
+
+  const handleToggleFavorite = async () => {
+    try {
+      if (isFavorite) {
+        await removeFavorite(id).unwrap();
+      } else {
+        await addFavorite(id).unwrap();
+      }
+    } catch (err) {
+      console.error("Favorite toggle error:", err);
+    }
+  }
+
+  const displayPrice = notice.price && notice.price > 0
+   ? `$${notice.price}`
+   : "";
+  
+  
   return (
     <div className={css.wrapper}>
         <div className={css.imageBox}>
@@ -56,12 +81,16 @@ export const ModalNotice = ({ notice, isFavorite, onToggleFavorite }: Props) => 
       <div className={css.footerActions}>
         <button 
           className={`${css.favBtn} ${isFavorite ? css.active : ''}`} 
-          onClick={onToggleFavorite}
+          onClick={handleToggleFavorite}
         >
           {isFavorite ? 'Remove from' : 'Add to'} 
-          <svg width="18" height="18" className={css.heartIcon}><use href="/src/shared/assets/sprite.svg#icon-heart-circle"></use></svg>
+          {!isFavorite && (
+            <svg width="18" height="18" className={css.heartIcon}>
+              <use href="/src/shared/assets/sprite.svg#heart-outline"></use>
+            </svg>
+          )}
         </button>
-        <a href="#" className={css.contactBtn}>Contact</a> 
+        <a href={`tel:${notice.user?.phone || ''}`} className={css.contactBtn}>Contact</a> 
       </div>
     </div>
   );

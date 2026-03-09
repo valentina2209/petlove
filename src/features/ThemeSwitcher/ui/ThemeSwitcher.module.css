@@ -1,0 +1,95 @@
+.switcherBtn {
+  width: 68px;
+  height: 34px;
+  border-radius: 30px;
+  background-color: var(--bg-card);
+  border: 2px solid var(--accent-color);
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  transition: transform 0.2s ease;
+}
+
+.switcherBtn:active {
+  transform: scale(0.95);
+}
+
+.iconContainer {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  align-items: center;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.isLight {
+  transform: translateX(0);
+}
+.isDark {
+  transform: translateX(-50%);
+}
+
+.iconDog,
+.iconCat {
+  width: 50%;
+  height: 24px;
+  flex-shrink: 0;
+  transition: fill 0.3s ease;
+}
+
+.iconDog {
+  fill: #111;
+}
+
+.iconWhite {
+  fill: aliceblue;
+}
+
+.iconBlack {
+  fill: #070707;
+}
+
+.dogTongue {
+  fill: #d3267f;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+:global([data-theme='light']) .dogTongue {
+  animation: dogLick 1.5s infinite ease-in-out;
+}
+
+@keyframes dogLick {
+  0%,
+  100% {
+    transform: scale(1.2) scaleY(1);
+  }
+  50% {
+    transform: scale(1.2) scaleY(1.8) translateY(8px);
+  }
+}
+
+:global([data-theme='light']) .dogTongue {
+  animation: dogLick 1.2s infinite ease-in-out;
+}
+
+.iconCat {
+  fill: #050505;
+}
+
+.catEyes {
+  fill: #333;
+  transition:
+    fill 0.3s ease,
+    filter 0.3s ease;
+}
+
+:global([data-theme='dark']) .catEyes {
+  fill: #f6b83d;
+  filter: drop-shadow(0 0 3px #f6b83d);
+}
+
+:global([data-theme='dark']) .iconCat {
+  fill: #070707;
+}

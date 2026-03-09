@@ -1,0 +1,30 @@
+.userNav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logoutBtn {
+  display: none;
+  padding: 15px 35px;
+  background: #f6b83d;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  background: #f9b020;
+}
+
+@media screen and (min-width: 768px) {
+  .logoutBtn {
+    display: block;
+    padding: 15px;
+  }
+}

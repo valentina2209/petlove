@@ -1,5 +1,5 @@
 import { baseApi } from "@/shared/api/baseApi";
-import { GetNoticesParams, NoticesResponse, City } from "../model/types";
+import { GetNoticesParams, NoticesResponse, City, Notice } from "../model/types";
 
 export const noticesApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -12,23 +12,28 @@ export const noticesApi = baseApi.injectEndpoints({
       providesTags: ['Notices'],
     }),
 
-    // Додавання в обране
-    addFavorite: builder.mutation<void, string>({
-      query: (id) => ({
-        url: `/notices/favorites/add/${id}`,
-        method: "POST",
-      }),
-      invalidatesTags: ["Notices"],
+    getNoticeById: builder.query<Notice, string>({
+      query: (id) => `/notices/${id}`,
+      providesTags: (result, error, id) => [{ type: 'Notices', id }],
     }),
 
+    // Додавання в обране
+    // addFavorite: builder.mutation<void, string>({
+    //   query: (id) => ({
+    //     url: `/notices/favorites/add/${id}`,
+    //     method: "POST",
+    //   }),
+    //   invalidatesTags: ["Notices"],
+    // }),
+
     // Видалення з обраного
-    removeFavorite: builder.mutation<void, string>({
-      query: (id) => ({
-        url: `/notices/favorites/remove/${id}`,
-        method: "DELETE",
-      }),
-      invalidatesTags: ['Notices'],
-    }),
+    // removeFavorite: builder.mutation<void, string>({
+    //   query: (id) => ({
+    //     url: `/notices/favorites/remove/${id}`,
+    //     method: "DELETE",
+    //   }),
+    //   invalidatesTags: ['Notices'],
+    // }),
 
     // Видалення оголошення
     deleteNotice: builder.mutation<void, string>({
@@ -65,8 +70,7 @@ export const noticesApi = baseApi.injectEndpoints({
 // Експорт хуків
 export const {
   useGetNoticesQuery,
-  useAddFavoriteMutation,
-  useRemoveFavoriteMutation,
+  useGetNoticeByIdQuery,
   useDeleteNoticeMutation,
   useGetNoticesCategoriesQuery,
   useGetNoticesSexQuery,
