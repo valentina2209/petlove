@@ -20,7 +20,7 @@ export const Header = () => {
     const isHomePage = pathname === "/" || pathname === "/home";
     
     const logoData = isHomePage ? IMAGES.logoHome : IMAGES.logo;
-
+    console.log("isLoggedIn:", isLoggedIn);
     return (
         <header className={`${css.header} ${isHomePage ? css.home : ""}`}>
             <div className="container">
@@ -49,13 +49,16 @@ export const Header = () => {
                     </div> 
                     
                     <div className={css.rightSide}>
-                        {isLoggedIn && (
+                        {isLoggedIn ? (
                             <div className={css.userWrapper}>
                                 <UserNav />
                             </div>
+                        ) : (
+                            <div className={css.desktopOnly}>
+                                <AuthNav />
+                            </div>   
                         )}
-
-                        {isLoggedIn && <div className={css.desktopOnly}><AuthNav /></div>}
+                        
                     
                         <button
                             className={css.burgerBtn}

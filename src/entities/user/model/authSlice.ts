@@ -22,16 +22,20 @@ const authSlice = createSlice({
     logOut: (state) => {
       state.token = null;
       state.isLoggedIn = false;
+      localStorage.removeItem('token');
     }
   },
   extraReducers: (builder) => {
-    builder.addMatcher(
+    builder
+      .addMatcher(
       userApi.endpoints.register.matchFulfilled,
       (state, { payload }) => {
         state.token = payload.token;
         state.isLoggedIn = true;
+        localStorage.setItem('token', payload.token);
       }
     );
+   
   },
 });
 
