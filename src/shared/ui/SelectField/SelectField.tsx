@@ -13,7 +13,7 @@ const DropdownIndicator = (props: any) => (
         transition: "transform 0.2s", 
       }}
     >
-      <use href="/public/sprite.svg#icon-chevron-down" />
+      <use href="/sprite.svg#icon-chevron-down" />
     </svg>
   </components.DropdownIndicator>
 );
