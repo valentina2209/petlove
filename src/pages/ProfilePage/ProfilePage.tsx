@@ -9,12 +9,17 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logOut } from "@/entities/user/model/authSlice";
 import { ModalApproveAction } from "@/shared/ui/ModalApproveAction/ModalApproveAction";
+import { useLang } from "@/app/providers/LanguageProvider/LanguageProvider";
+import { translations } from "@/shared/config/i18n/translations";
 
 const ProfilePage = () => {
   const { data: user, isLoading, isError } = useGetCurrentUserQuery();
   const [isModalOpen, setIsModalOpen] = useState(false)
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+   const { lang } = useLang()
+    const t = translations[lang]
 
   const handelOpenModal = () => {
     dispatch(logOut())
@@ -39,7 +44,7 @@ const ProfilePage = () => {
                 className={css.logoutBtn}
                 onClick={() => setIsModalOpen(true)}
               >
-                Log out
+                {t.btnLogOut}
               </button>
             </div>
           </div>

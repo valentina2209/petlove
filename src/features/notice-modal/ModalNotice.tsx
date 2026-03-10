@@ -2,6 +2,8 @@ import { useGetNoticeByIdQuery } from '@/entities/notice/api/noticesApi';
 import css from './ModalNotice.module.css';
 import { formatDate } from '@/shared/utils/formatDate';
 import { useAddFavoriteMutation, useGetCurrentUserQuery, useRemoveFavoriteMutation } from '@/entities/user/api/userApi';
+import { useLang } from '@/app/providers/LanguageProvider/LanguageProvider';
+import { translations } from '@/shared/config/i18n/translations';
 
 interface Props {
   id: string
@@ -11,6 +13,9 @@ interface Props {
 export const ModalNotice = ({ id, onClose }: Props) => {
   const { data: notice, isLoading } = useGetNoticeByIdQuery(id);
   const { data: user } = useGetCurrentUserQuery(undefined);
+
+  const { lang } = useLang()
+  const t = translations[lang]
   
   const [addFavorite] = useAddFavoriteMutation();
   const [removeFavorite] = useRemoveFavoriteMutation();
@@ -57,19 +62,19 @@ export const ModalNotice = ({ id, onClose }: Props) => {
       
       <div className={css.metaGrid}>
         <div className={css.metaItem}>
-          <span className={css.metaLabel}>Name</span>
+          <span className={css.metaLabel}>{t.name}</span>
           <span className={css.metaValue}>{notice.name}</span>
         </div>
         <div className={css.metaItem}>
-          <span className={css.metaLabel}>Birthday</span>
+          <span className={css.metaLabel}>{t.birthday}</span>
           <span className={css.metaValue}>{formatDate(notice.birthday)}</span>
         </div>
         <div className={css.metaItem}>
-          <span className={css.metaLabel}>Sex</span>
+          <span className={css.metaLabel}>{t.sex}</span>
           <span className={css.metaValue}>{notice.sex}</span>
         </div>
         <div className={css.metaItem}>
-          <span className={css.metaLabel}>Species</span>
+          <span className={css.metaLabel}>{t.species}</span>
           <span className={css.metaValue}>{notice.species}</span>
         </div>
       </div>

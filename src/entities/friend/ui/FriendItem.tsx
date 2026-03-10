@@ -1,5 +1,7 @@
+import { useLang } from '@/app/providers/LanguageProvider/LanguageProvider'
 import { Friend } from '../model/types'
 import css from './FriendItem.module.css'
+import { translations } from '@/shared/config/i18n/translations'
 
 interface Props {
     friend: Friend
@@ -7,6 +9,8 @@ interface Props {
 
 export const FriendItem = ({ friend }: Props) => {
   const openDay = friend.workDays?.find(day => day.isOpen)
+  const { lang } = useLang()
+    const t = translations[lang]
 
   const workingHours = openDay 
     ? `${openDay.from} - ${openDay.to}`
@@ -27,7 +31,7 @@ export const FriendItem = ({ friend }: Props) => {
       <ul className={css.contacts}>
         <h3 className={css.title} title={friend.title}>{friend.title}</h3>
         <li className={css.contactItem}>
-          <span className={css.label}>Email: </span>
+          <span className={css.label}>{t.email}: </span>
           <a
             href={`mailto:${friend.email}`}
             className={css.link}
@@ -36,7 +40,7 @@ export const FriendItem = ({ friend }: Props) => {
           </a>
         </li>
         <li className={css.contactItem}>
-          <span className={css.label}>Address: </span>
+          <span className={css.label}>{t.address}: </span>
           <a
             href={friend.addressUrl}
             target="_blank"
@@ -47,7 +51,7 @@ export const FriendItem = ({ friend }: Props) => {
           </a>
         </li>
         <li className={css.contactItem}>
-          <span className={css.label}>Phone: </span>
+          <span className={css.label}>{t.phone}: </span>
           <a
             href={`tel:${friend.phone}`}
             className={css.link}

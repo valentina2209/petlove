@@ -2,6 +2,8 @@ import { useRemovePetMutation } from "@/entities/user/api/userApi";
 import css from "./PetsItem.module.css";
 import { Pet } from "../model/types";
 import { formatDate } from "@/shared/utils/formatDate";
+import { useLang } from "@/app/providers/LanguageProvider/LanguageProvider";
+import { translations } from "@/shared/config/i18n/translations";
 
 interface Props {
     pet: Pet
@@ -9,6 +11,8 @@ interface Props {
 
 export const PetsItem = ({pet}: Props) => {
   const [removePet, { isLoading }] = useRemovePetMutation();
+  const { lang } = useLang()
+  const t = translations[lang]
 
   const handleDelete = async () => {
     try {
@@ -40,19 +44,19 @@ export const PetsItem = ({pet}: Props) => {
 
         <div className={css.infoGrid}>
           <div className={css.infoItem}>
-            <span className={css.label}>Name</span>
+            <span className={css.label}>{t.name}</span>
             <span className={css.value}>{pet.name}</span>
           </div>
           <div className={css.infoItem}>
-            <span className={css.label}>Birthday</span>
+            <span className={css.label}>{t.birthday}</span>
             <span className={css.value}>{formatDate(pet.birthday)}</span>
           </div>
           <div className={css.infoItem}>
-            <span className={css.label}>Sex</span>
+            <span className={css.label}>{t.sex}</span>
             <span className={css.value}>{pet.sex}</span>
           </div>
           <div className={css.infoItem}>
-            <span className={css.label}>Species</span>
+            <span className={css.label}>{t.species}</span>
             <span className={css.value}>{pet.species}</span>
           </div>
         </div>

@@ -4,6 +4,8 @@ import { useUpdateUserMutation } from "@/entities/user/api/userApi";
 import { editSchema } from "../../model/editSchema";
 import css from "./EditUserModal.module.css";
 import { useRef } from "react";
+import { useLang } from "@/app/providers/LanguageProvider/LanguageProvider";
+import { translations } from "@/shared/config/i18n/translations";
 
 interface EditUserModalProps {
   initialData: {
@@ -18,6 +20,9 @@ interface EditUserModalProps {
 export const EditUserModal = ({ initialData, onClose }: EditUserModalProps) => {
   const [updateUser, { isLoading }] = useUpdateUserMutation();
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const { lang } = useLang()
+  const t = translations[lang]
 
   const {
     register,
@@ -37,7 +42,6 @@ export const EditUserModal = ({ initialData, onClose }: EditUserModalProps) => {
 
   const avatarValue = watch("avatar");
 
-  // ВИПРАВЛЕННЯ ПОМИЛКИ 66: Безпечне отримання URL для прев'ю
   const getAvatarPreview = () => {
     if (!avatarValue) return "/src/shared/assets/default-avatar.png";
     if (typeof avatarValue === "string" && avatarValue.startsWith("http")) return avatarValue;
@@ -52,23 +56,22 @@ export const EditUserModal = ({ initialData, onClose }: EditUserModalProps) => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      // Записуємо сам файл у форму для відправки на сервер
+    
       setValue("avatar", file, { shouldValidate: true });
     }
   };
 
   const onSubmit = async (data: any) => {
   try {
-    // Створюємо чистий об'єкт для відправки
+
     const body = {
       name: data.name,
       email: data.email,
       phone: data.phone || "",
-      // ПЕРЕВІРКА: якщо в avatar лежить File, ми не можемо його відправити як JSON.
-      // Відправляємо або нове посилання, або старе, або дефолтне.
+      
       avatar: typeof data.avatar === 'string' && data.avatar.trim() !== "" 
         ? data.avatar 
-        : initialData.avatar // Повертаємо старий аватар, щоб не було помилки "empty"
+        : initialData.avatar 
     };
 
     console.log("Відправляємо на сервер:", body);
@@ -76,7 +79,6 @@ export const EditUserModal = ({ initialData, onClose }: EditUserModalProps) => {
     await updateUser(body).unwrap();
     onClose();
   } catch (error) {
-    // Тут ми побачимо помилку 400, якщо щось не так
     console.error("Update failed:", error);
   }
 };
@@ -88,14 +90,13 @@ export const EditUserModal = ({ initialData, onClose }: EditUserModalProps) => {
           <svg width="24" height="24"><use href="/src/shared/assets/sprite.svg#icon-close" /></svg> 
         </button>
         
-        <h2 className={css.title}>Edit information</h2>
+        <h2 className={css.title}>{t.edit}</h2>
 
         <div className={css.avatarPreview}>
            <img src={getAvatarPreview()} alt="User" />
         </div>
         
         <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
-          {/* Поле для завантаження/посилання на аватар */}
           <div className={css.avatarRow}>
             <input
               {...register("avatar")}
@@ -103,7 +104,6 @@ export const EditUserModal = ({ initialData, onClose }: EditUserModalProps) => {
               className={css.urlInput}
             />
 
-            {/* Прихований інпут для файлів */}
             <input 
               type="file" 
               ref={fileInputRef} 
@@ -113,7 +113,7 @@ export const EditUserModal = ({ initialData, onClose }: EditUserModalProps) => {
             />
 
             <button type="button" className={css.uploadBtn} onClick={handleUploadClick}>
-               Upload photo
+               {t.upload}
                <svg className={css.icon} width="18" height="18"><use href="/src/shared/assets/sprite.svg#icon-upload-cloud" /></svg>
              </button>
           </div>

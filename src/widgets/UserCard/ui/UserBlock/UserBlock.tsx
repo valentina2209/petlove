@@ -2,11 +2,16 @@ import { useGetCurrentUserQuery } from "@/entities/user/api/userApi"
 import css from "./UserBlock.module.css"
 import { EditUserBtn } from "../EditUserBtn/EditUserBtn";
 import { ChangeEvent, useRef, useState } from "react";
+import { useLang } from "@/app/providers/LanguageProvider/LanguageProvider";
+import { translations } from "@/shared/config/i18n/translations";
 
 
 export const UserBlock = () => {
     const { data: user, isLoading, error } = useGetCurrentUserQuery();
     const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
+
+    const { lang } = useLang()
+    const t = translations[lang]
 
     const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -49,7 +54,7 @@ export const UserBlock = () => {
                         </div>                 
                     )}
                 </div>
-                <span className={css.uploadText}>Upload photo</span>
+                <span className={css.uploadText}>{t.upload}</span>
             </label>
 
             <input
@@ -61,7 +66,7 @@ export const UserBlock = () => {
                 className={css.hiddenInput} 
             />
             <div className={css.infoList}> 
-                <h3 className={css.cardTitle}>My information</h3>
+                <h3 className={css.cardTitle}>{t.myInfo}</h3>
                 <div className={css.list}>
                     <input 
                         type="text" 

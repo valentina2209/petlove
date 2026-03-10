@@ -1,5 +1,7 @@
+import { useLang } from '@/app/providers/LanguageProvider/LanguageProvider';
 import type { News } from '../model/types'
 import css from "./NewsItem.module.css"
+import { translations } from '@/shared/config/i18n/translations';
 
 interface Props {
   news: News
@@ -7,6 +9,8 @@ interface Props {
 
 export const NewsItem = ({ news }: Props) => {
   const formattedDate = new Date(news.date).toLocaleDateString("uk-UA");
+  const { lang } = useLang()
+  const t = translations[lang]
 
   return (
     <article>
@@ -32,7 +36,7 @@ export const NewsItem = ({ news }: Props) => {
               rel='noopener noreferrer'
               className={css.link}
             >
-              Read more
+              {t.readMore}
             </a>
           </div>
         </div>

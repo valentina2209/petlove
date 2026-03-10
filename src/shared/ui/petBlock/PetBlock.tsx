@@ -1,4 +1,6 @@
+import { useLang } from "@/app/providers/LanguageProvider/LanguageProvider";
 import css from "./PetBlock.module.css"
+import { translations } from "@/shared/config/i18n/translations";
 
 interface PetBlockProps {
   images: {
@@ -21,6 +23,9 @@ export const PetBlock = ({
   description,
   className,
 }: PetBlockProps) => {
+  const { lang } = useLang()
+  const t = translations[lang]
+
   return (
     <div className={`${css.wrapper} ${className}`}>
       <div className={css.imageContainer}>
@@ -44,7 +49,7 @@ export const PetBlock = ({
                 <div className={css.wrapperText}>
                   <span className={css.petName}>{petName}</span>
                   <span className={css.birthdayLabel}>
-                    Birthday: <span className={css.birthdayValue}>{birthday}</span>
+                    {t.birthday}: <span className={css.birthdayValue}>{birthday}</span>
                   </span>
                 </div>
                 <p className={css.badgeText}>{description}</p>

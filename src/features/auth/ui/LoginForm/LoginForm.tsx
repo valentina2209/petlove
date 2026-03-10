@@ -8,12 +8,17 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useLoginMutation } from "@/entities/user/api/userApi";
 import { setCredentials } from "@/entities/user/model/authSlice";
+import { useLang } from "@/app/providers/LanguageProvider/LanguageProvider";
+import { translations } from "@/shared/config/i18n/translations";
 
 
 export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const { lang } = useLang()
+  const t = translations[lang]
   
 
   const [login, { isLoading }] = useLoginMutation();
@@ -33,11 +38,6 @@ export const LoginForm = () => {
   
   const isSuccess = passwordValue.length > 0  && !errors.password
 
-  // const passwordClass = `${css.input} ${
-  //   errors.password ? css.inputError : 
-  //   isPasswordValid ? css.inputSuccess : "" 
-  //   }`;
-  
   const onSubmit = async (data: any) => {
     try {
       const result = await login(data).unwrap();
@@ -52,8 +52,8 @@ export const LoginForm = () => {
   return (
     <div className={css.containerForm}>
         <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
-        <Title className={css.title}>Log in</Title>      
-        <p className={css.subtitle}>Welcome! Please enter your credentials to login to the platform:</p>
+        <Title className={css.title}>{t.logIn}</Title>      
+        <p className={css.subtitle}>{t.welcome}</p>
 
         <div className={css.inputWrapper}>
           <input
@@ -94,7 +94,7 @@ export const LoginForm = () => {
        </button>
         
         <p className={css.redirectText}>
-          Don’t have an account? <NavLink to="/register" className={css.link}>Register</NavLink>
+          {t.donHave} <NavLink to="/register" className={css.link}>{t.register}</NavLink>
         </p>
       </form>
     </div>

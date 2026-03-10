@@ -14,11 +14,16 @@ import { useNoticesFilters } from "../model/useNoticesFilters";
 import { formatOptions } from "@/shared/lib/select";
 
 import css from "./NoticesFilters.module.css";
+import { useLang } from "@/app/providers/LanguageProvider/LanguageProvider";
+import { translations } from "@/shared/config/i18n/translations";
 
 export const NoticesFilters = () => {
   const { params, updateParam, resetFilters } = useNoticesFilters();
 
   const [cityKeyword, setCityKeyword] = useState("");
+
+  const { lang } = useLang()
+  const t = translations[lang]
 
   const { data: categories = [] } = useGetNoticesCategoriesQuery();
   const { data: sex = [] } = useGetNoticesSexQuery();
@@ -106,7 +111,7 @@ export const NoticesFilters = () => {
         ))}
 
         <button className={css.reset} onClick={resetFilters}>
-          Reset
+          {t.reset}
         </button>
       </div>  
     

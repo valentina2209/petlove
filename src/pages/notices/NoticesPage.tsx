@@ -5,10 +5,13 @@ import { NoticesFilters } from "@/features/noticesFilters/ui/NoticesFilters"
 import { NoticesList } from "@/widgets/notices-list/NoticesList"
 import { Pagination } from "@/shared/ui/pagination/Pagination"
 import css from "./NoticesPage.module.css"
+import { useLang } from "@/app/providers/LanguageProvider/LanguageProvider"
+import { translations } from "@/shared/config/i18n/translations"
 
 export const NoticesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams()
-
+  const { lang } = useLang()
+  const t = translations[lang]
   const params = {
     keyword: searchParams.get("keyword") || undefined,
     category: searchParams.get("category") || "",
@@ -30,9 +33,7 @@ export const NoticesPage = () => {
   return (
     <section className="container">
       <div className={css.wrapper}>
-        <Title size="xl" className={css.title}>Find your favorite pet</Title>
-        {/* <NoticesFilters /> */}
-
+        <Title size="xl" className={css.title}>{t.noticeTitle}</Title>
         <NoticesFilters />
         <NoticesList
           notices={data?.results || []}

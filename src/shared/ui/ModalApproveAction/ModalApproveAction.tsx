@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import css from './ModalApproveAction.module.css';
+import { useLang } from '@/app/providers/LanguageProvider/LanguageProvider';
+import { translations } from '@/shared/config/i18n/translations';
 
 interface ModalApproveActionProps {
   onClose: () => void;
@@ -10,7 +12,9 @@ interface ModalApproveActionProps {
 const modalRoot = document.querySelector('#modal-root') as HTMLElement;
 
 export const ModalApproveAction = ({ onClose, onConfirm }: ModalApproveActionProps) => {
-  // Закриття по клавіші Escape — ознака хорошого тону (UX)
+  const { lang } = useLang()
+  const t = translations[lang]
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.code === 'Escape') onClose();
@@ -19,7 +23,6 @@ export const ModalApproveAction = ({ onClose, onConfirm }: ModalApproveActionPro
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
-  // Використовуємо createPortal, щоб винести модалку за межі Header
   return createPortal(
     <div className={css.backdrop} onClick={onClose}>
       <div className={css.modal} onClick={(e) => e.stopPropagation()}>
@@ -33,10 +36,10 @@ export const ModalApproveAction = ({ onClose, onConfirm }: ModalApproveActionPro
             <div className={css.iconPlaceholder}>
                 <img src="/src/shared/assets/images/desktop/cat-avatar.png" />
             </div>
-            <h2 className={css.title}>Already leaving?</h2>
+          <h2 className={css.title}>{t.already}</h2>
         <div className={css.buttons}>
-          <button className={css.confirmBtn} onClick={onConfirm}>Yes</button>
-          <button className={css.cancelBtn} onClick={onClose}>Cancel</button>
+            <button className={css.confirmBtn} onClick={onConfirm}>{t.yes}</button>
+            <button className={css.cancelBtn} onClick={onClose}>{t.cancel}</button>
         </div>
         </div>
 

@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom';
 import css from './NotFoundPage.module.css';
 
-
 import catDesktop from '@/shared/assets/images/404-cat-desktop.png';
 import catTablet from '@/shared/assets/images/404-cat-tablet.png';
 import catMobile from '@/shared/assets/images/404-cat-mobile.png';
 import { Header } from '@/widgets/header';
+import { useLang } from '@/app/providers/LanguageProvider/LanguageProvider';
+import { translations } from '@/shared/config/i18n/translations';
 
 export const NotFoundPage = () => {
+     const { lang } = useLang()
+      const t = translations[lang]
     return (
         <>
             <Header />
@@ -20,7 +23,7 @@ export const NotFoundPage = () => {
                     </picture>
            
                     <Link to="/home" className={css.homeBtn}>
-                        To home page
+                        {t.btnNot}
                     </Link>
                 </div>
             </div>

@@ -15,16 +15,15 @@ export const NoticesList = ({ notices, isLoading }: Props) => {
   if (!notices.length) return <p className={css.statusMessage}>No notices found</p>
 
   return (
-    
-      <ul className={css.grid}>
-        {notices.map((notice) => (
-          <li key={notice._id} className={css.item}>
-            <NoticeItem
-              notice={notice}
-            />
-          </li>
-        ))}
-      </ul>
+    <ul className={css.grid}>
+      {notices.map((notice) => (
+        <li key={notice._id} className={css.item}>
+          <NoticeItem
+            notice={notice}
+          />
+        </li>
+      ))}
+    </ul>
     
   )
 }

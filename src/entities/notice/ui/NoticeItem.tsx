@@ -8,6 +8,8 @@ import { Modal } from "@/shared/ui/modal/Modal"
 import { ModalNotice } from "@/features/notice-modal/ModalNotice"
 import { ModalAttention } from "@/features/notice-modal/ModalAttention"
 import { useModal } from "@/shared/hooks/useModal"
+import { useLang } from "@/app/providers/LanguageProvider/LanguageProvider"
+import { translations } from "@/shared/config/i18n/translations"
 
 interface Props {
   notice: Notice
@@ -16,6 +18,8 @@ interface Props {
 
 export const NoticeItem = ({ notice, variant = 'default' }: Props) => {
   const { isOpen, open, close } = useModal();
+  const { lang } = useLang()
+  const t = translations[lang]
 
 
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
@@ -72,23 +76,23 @@ export const NoticeItem = ({ notice, variant = 'default' }: Props) => {
         
         <div className={css.meta}>
           <div className={css.metaItem}>
-            <span className={css.metaLabel}>Name</span>
+            <span className={css.metaLabel}>{t.name}</span>
             <span className={css.metaValue}>{notice.name}</span>
           </div>
           <div className={css.metaItem}>
-            <span className={css.metaLabel}>Birthday</span>
+            <span className={css.metaLabel}>{t.birthday}</span>
             <span className={css.metaValue}>{formatDate(notice.birthday)}</span>
           </div>
           <div className={css.metaItem}>
-            <span className={css.metaLabel}>Sex</span>
+            <span className={css.metaLabel}>{t.sex}</span>
             <span className={css.metaValue}>{notice.sex}</span>
           </div>
           <div className={css.metaItem}>
-            <span className={css.metaLabel}>Species</span>
+            <span className={css.metaLabel}>{t.species}</span>
             <span className={css.metaValue}>{notice.species}</span>
           </div>
           <div className={css.metaItem}>
-            <span className={css.metaLabel}>Category</span>
+            <span className={css.metaLabel}>{t.category}</span>
             <span className={css.metaValue}>{notice.category}</span>
           </div>
         </div>
@@ -102,7 +106,7 @@ export const NoticeItem = ({ notice, variant = 'default' }: Props) => {
               onClick={handleLearnMoreClick}
               className={css.learnMoreBtn}
             >
-              Learn more
+              {t.learnMore}
             </button>
 
             {isOpen && (

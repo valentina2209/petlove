@@ -8,12 +8,17 @@ import css from './AddPetForm.module.css';
 
 import { useGetNoticesSpeciesQuery } from '@/entities/notice/api/noticesApi';
 import { useState } from 'react';
+import { useLang } from '@/app/providers/LanguageProvider/LanguageProvider';
+import { translations } from '@/shared/config/i18n/translations';
 
 
 
 export const AddPetForm = () => {
   const navigate = useNavigate();
   const [addPet, { isLoading }] = useAddUserPetMutation();
+
+  const { lang } = useLang()
+  const t = translations[lang]
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -53,7 +58,7 @@ export const AddPetForm = () => {
   
   return (
     <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
-      <h2 className={css.title}>Add my pet / <span className={css.subtitle}>Personal details</span></h2>
+      <h2 className={css.title}>{t.addMyPet} / <span className={css.subtitle}>{t.personalDetails}</span></h2>
       
       <div className={css.headerActions}>
         {/* Радіо-кнопки статі з іконками зі спрайту */}
@@ -156,8 +161,8 @@ export const AddPetForm = () => {
       </div>
 
       <div className={css.actions}>
-        <button type="button" onClick={() => navigate('/profile')} className={css.backBtn}>Back</button>
-        <button type="submit" disabled={isLoading} className={css.submitBtn}>Submit</button>
+        <button type="button" onClick={() => navigate('/profile')} className={css.backBtn}>{t.back}</button>
+        <button type="submit" disabled={isLoading} className={css.submitBtn}>{t.submit}</button>
       </div>
     </form>
   );

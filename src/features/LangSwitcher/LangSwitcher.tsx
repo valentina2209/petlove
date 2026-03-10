@@ -1,10 +1,12 @@
 import { useLang } from "@/app/providers/LanguageProvider/LanguageProvider";
 import css from "./LangSwitcher.module.css";
 import { useLocation } from "react-router-dom";
+import { translations } from "@/shared/config/i18n/translations";
 
 export const LangSwitcher = ({ isMobileMenu = false }) => {
   const { lang, toggleLang } = useLang();
   const { pathname } = useLocation();
+  const t = translations[lang]
   
   const isHomePage = pathname === "/" || pathname === "/home";
   
@@ -25,7 +27,7 @@ export const LangSwitcher = ({ isMobileMenu = false }) => {
             <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10"/>
             <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6"/>
           </svg>
-          <span className={`${css.text} ${textColorClass}`}>EN</span>
+          <span className={`${css.text} ${textColorClass}`}>{t.en}</span>
         </div>
       ) : (
         <div className={css.langWrapper}>
@@ -34,7 +36,7 @@ export const LangSwitcher = ({ isMobileMenu = false }) => {
               <rect width="3" height="1" fill="#0057B7"/>
               <rect width="3" height="1" y="1" fill="#FFD700"/>
             </svg>
-          <span className={`${css.text} ${textColorClass}`}>UA</span>
+            <span className={`${css.text} ${textColorClass}`}>{t.ua}</span>
         </div>
       )}
     </button>
