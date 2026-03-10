@@ -43,10 +43,10 @@ export const EditUserModal = ({ initialData, onClose }: EditUserModalProps) => {
   const avatarValue = watch("avatar");
 
   const getAvatarPreview = () => {
-    if (!avatarValue) return "/src/shared/assets/default-avatar.png";
+    if (!avatarValue) return "@/shared/assets/default-avatar.png";
     if (typeof avatarValue === "string" && avatarValue.startsWith("http")) return avatarValue;
     if (avatarValue instanceof File) return URL.createObjectURL(avatarValue);
-    return "/src/shared/assets/default-avatar.png";
+    return "@/shared/assets/default-avatar.png";
   };
 
   const handleUploadClick = () => {
