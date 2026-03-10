@@ -38,7 +38,7 @@ export const SearchNews = ({ onSearch }: Props) => {
           )}
           <button type='submit' className={css.submitButton}>
             <svg className={css.searchIcon}>
-              <use href="/src/shared/assets/sprite.svg#search"></use>
+              <use href="/public/sprite.svg#search"></use>
             </svg>
           </button>
         </div>

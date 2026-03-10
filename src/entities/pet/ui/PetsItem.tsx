@@ -37,7 +37,7 @@ export const PetsItem = ({pet}: Props) => {
             disabled={isLoading}
           >
             <svg width="18" height="18" className={css.icon}>
-              <use href="/src/shared/assets/sprite.svg#wastebasket" />
+              <use href="/public/sprite.svg#wastebasket" />
             </svg>
           </button>
         </div>

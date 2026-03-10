@@ -3,7 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
 import { useAddUserPetMutation } from '@/entities/user/api/userApi';
 import { addPetSchema } from '../model/schema';
-import sprite from '@/shared/assets/sprite.svg'; 
+import sprite from '../../../../public/sprite.svg'; 
 import css from './AddPetForm.module.css';
 
 import { useGetNoticesSpeciesQuery } from '@/entities/notice/api/noticesApi';

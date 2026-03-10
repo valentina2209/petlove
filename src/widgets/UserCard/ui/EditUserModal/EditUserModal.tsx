@@ -87,7 +87,7 @@ export const EditUserModal = ({ initialData, onClose }: EditUserModalProps) => {
     <div className={css.overlay} onClick={onClose}>
       <div className={css.modal} onClick={(e) => e.stopPropagation()}>
         <button className={css.closeBtn} onClick={onClose}>
-          <svg width="24" height="24"><use href="/src/shared/assets/sprite.svg#icon-close" /></svg> 
+          <svg width="24" height="24"><use href="/public/sprite.svg#icon-close" /></svg> 
         </button>
         
         <h2 className={css.title}>{t.edit}</h2>
@@ -114,7 +114,7 @@ export const EditUserModal = ({ initialData, onClose }: EditUserModalProps) => {
 
             <button type="button" className={css.uploadBtn} onClick={handleUploadClick}>
                {t.upload}
-               <svg className={css.icon} width="18" height="18"><use href="/src/shared/assets/sprite.svg#icon-upload-cloud" /></svg>
+               <svg className={css.icon} width="18" height="18"><use href="/public/sprite.svg#icon-upload-cloud" /></svg>
              </button>
           </div>
           {errors.avatar && <p className={css.error}>{errors.avatar.message}</p>}

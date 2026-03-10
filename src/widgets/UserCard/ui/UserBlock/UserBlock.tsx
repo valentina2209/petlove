@@ -33,7 +33,7 @@ export const UserBlock = () => {
             <div className={css.header}>
                 <div className={css.userTag}>User
                     <svg className={css.iconUser} width="18" height="18">
-                        <use href="/src/shared/assets/sprite.svg#icon-user" />
+                        <use href="/public/sprite.svg#icon-user" />
                     </svg>
                 </div>
                 

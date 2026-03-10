@@ -77,7 +77,7 @@ export const RegistrationForm = () => {
           />
           {errors.name && (
             <svg className={css.statusIconError}>
-              <use href="/src/shared/assets/sprite.svg#crossSmall"></use>
+              <use href="/public/sprite.svg#crossSmall"></use>
             </svg>
           )}   
         </div>
@@ -91,7 +91,7 @@ export const RegistrationForm = () => {
             className={emailClass}
           />
           {errors.email && (
-            <svg className={css.statusIconError}><use href="/src/shared/assets/sprite.svg#crossSmall"></use></svg>
+            <svg className={css.statusIconError}><use href="/public/sprite.svg#crossSmall"></use></svg>
           )}
         </div>
         {errors.email && <p className={css.errorText}>{errors.email.message}</p>}
@@ -107,11 +107,11 @@ export const RegistrationForm = () => {
            <div className={css.controls}>
             {isSuccess && (
               <svg className={css.statusIconSuccess}>
-                <use href="/src/shared/assets/sprite.svg#check"></use>
+                <use href="/public/sprite.svg#check"></use>
               </svg>
             )}
             <button type="button" onClick={() => setShowPassword(!showPassword)} className={css.eyeBtn}>
-              <svg className={css.eyeIcon}><use href={`/src/shared/assets/sprite.svg#eye${showPassword ? '' : 'Off'}`}></use></svg>
+              <svg className={css.eyeIcon}><use href={`/public/sprite.svg#eye${showPassword ? '' : 'Off'}`}></use></svg>
             </button>
           </div>
         </div>
@@ -131,7 +131,7 @@ export const RegistrationForm = () => {
           />
           <div className={css.controls}>
             <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)} className={css.eyeBtn}>
-             <svg className={css.eyeIcon}><use href={`/src/shared/assets/sprite.svg#eye${showConfirmPassword ? '' : 'Off'}`}></use></svg>
+             <svg className={css.eyeIcon}><use href={`/public/sprite.svg#eye${showConfirmPassword ? '' : 'Off'}`}></use></svg>
             </button>
           </div>
           

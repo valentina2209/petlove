@@ -9,7 +9,7 @@ export const EditUserBtn = ({ initialData }: { initialData: any }) => {
     <>
       <button onClick={() => setIsOpen(true)} className={css.editBtn}>
         <svg width="18" height="18" className="iconPen">
-          <use href="/src/shared/assets/sprite.svg#pen"/>
+          <use href="/public/sprite.svg#pen"/>
         </svg>
       </button>
 

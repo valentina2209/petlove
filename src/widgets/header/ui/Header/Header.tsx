@@ -20,7 +20,7 @@ export const Header = () => {
     const isHomePage = pathname === "/" || pathname === "/home";
     
     const logoData = isHomePage ? IMAGES.logoHome : IMAGES.logo;
-    console.log("isLoggedIn:", isLoggedIn);
+   
     return (
         <header className={`${css.header} ${isHomePage ? css.home : ""}`}>
             <div className="container">
@@ -65,7 +65,7 @@ export const Header = () => {
                             onClick={() => setIsMenuOpen(true)}
                         >
                             <svg className={`${css.burgerIcon} ${isHomePage ? css.iconWhite : css.iconBlack}`}>
-                                <use href="/src/shared/assets/sprite.svg#icon-burger"></use>
+                                <use href="/public/sprite.svg#icon-burger"></use>
                             </svg>
                         </button>
                     </div>
