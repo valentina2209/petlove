@@ -34,7 +34,7 @@ export const ModalApproveAction = ({ onClose, onConfirm }: ModalApproveActionPro
         
         <div className={css.content}>
             <div className={css.iconPlaceholder}>
-                <img src="@/shared/assets/images/desktop/cat-avatar.png" />
+                <img src="/cat-avatar.png" />
             </div>
           <h2 className={css.title}>{t.already}</h2>
         <div className={css.buttons}>

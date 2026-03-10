@@ -14,7 +14,7 @@ export const ModalAttention = ({ onClose }: Props) => {
   return (
     <div className={css.content}>
       <div className={css.iconWrapper}>
-        <img src="/src/shared/assets/dog-avatar.png" alt="Attention" />
+        <img src="/dog-avatar.png" alt="Attention" />
       </div>
       <h2 className={css.title}>{t.attention}</h2>
       <p className={css.text}>
