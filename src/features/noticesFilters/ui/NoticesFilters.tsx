@@ -1,18 +1,14 @@
 import { useState } from "react";
 import { SearchField } from "@/shared/ui/SearchField/SearchField";
 import { SelectField } from "@/shared/ui/SelectField/SelectField";
-
 import {
   useGetNoticesCategoriesQuery,
   useGetNoticesSexQuery,
   useGetNoticesSpeciesQuery,
   useGetCitiesQuery,
 } from "@/entities/notice/api/noticesApi";
-
 import { useNoticesFilters } from "../model/useNoticesFilters";
-
 import { formatOptions } from "@/shared/lib/select";
-
 import css from "./NoticesFilters.module.css";
 import { useLang } from "@/app/providers/LanguageProvider/LanguageProvider";
 import { translations } from "@/shared/config/i18n/translations";

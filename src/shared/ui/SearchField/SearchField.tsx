@@ -17,7 +17,7 @@ export const SearchField = ({ value, onChange, placeholder }: Props) => {
       />
 
       <svg width="18" height="18" className={css.icon}>
-        <use href="/public/sprite.svg#search" />
+        <use href="/sprite.svg#search" />
       </svg>
     </div>
   );

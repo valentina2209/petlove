@@ -28,7 +28,7 @@ export const Modal = ({ children, onClose }: ModalProps) => {
             <div className={css.container}>
                 <button className={css.closeBtn} onClick={onClose}>
                     <svg width="24" height="24">
-                        <use href="/public/sprite.svg#icon-close"></use>
+                        <use href="/sprite.svg#icon-close"></use>
                     </svg>
                 </button>
                 {children}

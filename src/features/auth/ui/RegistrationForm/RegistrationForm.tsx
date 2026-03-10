@@ -5,6 +5,8 @@ import { useRegisterMutation } from "@/entities/user/api/userApi"
 import { useNavigate } from "react-router-dom"
 import css from "./RegistrationForm.module.css"
 import { useState } from "react"
+import { useLang } from "@/app/providers/LanguageProvider/LanguageProvider"
+import { translations } from "@/shared/config/i18n/translations"
 
 
 interface FormValues {
@@ -20,6 +22,9 @@ export const RegistrationForm = () => {
 
   const [registerUser, {isLoading}] = useRegisterMutation()
   const navigate = useNavigate()
+
+  const { lang } = useLang()
+  const t = translations[lang]
 
   const {
     register,
@@ -66,8 +71,8 @@ export const RegistrationForm = () => {
   return (
     <div className={css.containerForm}>
       <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
-        <h1 className={css.title}>Registration</h1>
-        <p className={css.subtitle}>Thank you for your interest in our platform.</p>
+        <h1 className={css.title}>{t.regTitle}</h1>
+        <p className={css.subtitle}>{t.subtitle}</p>
 
         <div className={css.inputWrapper}>
           <input
@@ -77,7 +82,7 @@ export const RegistrationForm = () => {
           />
           {errors.name && (
             <svg className={css.statusIconError}>
-              <use href="/public/sprite.svg#crossSmall"></use>
+              <use href="/sprite.svg#crossSmall"></use>
             </svg>
           )}   
         </div>
@@ -91,7 +96,7 @@ export const RegistrationForm = () => {
             className={emailClass}
           />
           {errors.email && (
-            <svg className={css.statusIconError}><use href="/public/sprite.svg#crossSmall"></use></svg>
+            <svg className={css.statusIconError}><use href="/sprite.svg#crossSmall"></use></svg>
           )}
         </div>
         {errors.email && <p className={css.errorText}>{errors.email.message}</p>}
@@ -107,11 +112,11 @@ export const RegistrationForm = () => {
            <div className={css.controls}>
             {isSuccess && (
               <svg className={css.statusIconSuccess}>
-                <use href="/public/sprite.svg#check"></use>
+                <use href="/sprite.svg#check"></use>
               </svg>
             )}
             <button type="button" onClick={() => setShowPassword(!showPassword)} className={css.eyeBtn}>
-              <svg className={css.eyeIcon}><use href={`/public/sprite.svg#eye${showPassword ? '' : 'Off'}`}></use></svg>
+              <svg className={css.eyeIcon}><use href={`/sprite.svg#eye${showPassword ? '' : 'Off'}`}></use></svg>
             </button>
           </div>
         </div>
@@ -131,7 +136,7 @@ export const RegistrationForm = () => {
           />
           <div className={css.controls}>
             <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)} className={css.eyeBtn}>
-             <svg className={css.eyeIcon}><use href={`/public/sprite.svg#eye${showConfirmPassword ? '' : 'Off'}`}></use></svg>
+             <svg className={css.eyeIcon}><use href={`/sprite.svg#eye${showConfirmPassword ? '' : 'Off'}`}></use></svg>
             </button>
           </div>
           

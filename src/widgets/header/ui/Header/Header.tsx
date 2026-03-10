@@ -65,7 +65,7 @@ export const Header = () => {
                             onClick={() => setIsMenuOpen(true)}
                         >
                             <svg className={`${css.burgerIcon} ${isHomePage ? css.iconWhite : css.iconBlack}`}>
-                                <use href="/public/sprite.svg#icon-burger"></use>
+                                <use href="/sprite.svg#icon-burger"></use>
                             </svg>
                         </button>
                     </div>

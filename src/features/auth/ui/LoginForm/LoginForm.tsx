@@ -63,7 +63,7 @@ export const LoginForm = () => {
             className={emailClass}
           />
           {errors.email && (
-            <svg className={css.statusIconError}><use href="/public/sprite.svg#icon-close"></use></svg>
+            <svg className={css.statusIconError}><use href="/sprite.svg#icon-close"></use></svg>
           )}
         </div>
         {errors.email && <p className={css.errorText}>{errors.email.message}</p>}
@@ -83,7 +83,7 @@ export const LoginForm = () => {
               </svg>
             )}
             <button type="button" onClick={() => setShowPassword(!showPassword)} className={css.eyeBtn}>
-              <svg className={css.eyeIcon}><use href={`/public/sprite.svg#eye${showPassword ? "" : "Off"}`}></use></svg>
+              <svg className={css.eyeIcon}><use href={`/sprite.svg#eye${showPassword ? "" : "Off"}`}></use></svg>
             </button>
           </div>
         </div>

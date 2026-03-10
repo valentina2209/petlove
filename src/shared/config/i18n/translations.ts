@@ -47,11 +47,9 @@ export const translations = {
     myPets: "My pets",
     addPet: "Add pet",
     emptyText: "You haven't added any pets yet.",
-    myInfo: "My information"
-
-
-
-
+    myInfo: "My information",
+    regTitle: "Registration",
+    subtitle: "Thank you for your interest in our platform."
   },
   ua: {
     heroTitle: "Добре ",
@@ -101,6 +99,8 @@ export const translations = {
     myPets: "Мої улюбленці",
     addPet: "Додати улюбленця",
     emptyText: "Ви ще не додали жодного домашнього улюбленця.",
-    myInfo: "Моя інформація"
+    myInfo: "Моя інформація",
+    regTitle: "Реєстрація",
+    subtitle: "Дякуємо за інтерес до нашої платформи"
   }
 } as const;

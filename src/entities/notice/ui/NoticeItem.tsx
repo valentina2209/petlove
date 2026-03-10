@@ -68,7 +68,7 @@ export const NoticeItem = ({ notice, variant = 'default' }: Props) => {
 
           <div className={css.rating}>
             <svg width="16" height="16" className={css.starIcon}>
-              <use href="/public/sprite.svg#star"></use>
+              <use href="/sprite.svg#star"></use>
             </svg>
             <span>{notice.popularity}</span>
           </div>
@@ -126,7 +126,7 @@ export const NoticeItem = ({ notice, variant = 'default' }: Props) => {
               title={isFavorite ? "Remove from favorites" : "Add to favorites"}
             >
               <svg width="30" height="30" className={css.heartIcon}>
-                <use href={`/public/sprite.svg#${variant === 'favorite'
+                <use href={`/sprite.svg#${variant === 'favorite'
                     ? 'icon-trash'
                     : (isFavorite ? 'icon-heart-filled' : 'icon-heart')
                   }`}>

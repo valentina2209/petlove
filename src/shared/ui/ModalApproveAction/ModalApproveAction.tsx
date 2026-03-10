@@ -28,7 +28,7 @@ export const ModalApproveAction = ({ onClose, onConfirm }: ModalApproveActionPro
       <div className={css.modal} onClick={(e) => e.stopPropagation()}>
         <button className={css.closeBtn} onClick={onClose} aria-label="Close modal">
           <svg className={css.closeIcon}>
-            <use href="/public/sprite.svg#icon-close"></use>
+            <use href="/sprite.svg#icon-close"></use>
           </svg>
         </button>
         

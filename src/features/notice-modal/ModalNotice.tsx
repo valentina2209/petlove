@@ -52,11 +52,11 @@ export const ModalNotice = ({ id, onClose }: Props) => {
         <h3 className={css.title}>{notice.title}</h3>
         
       <div className={css.rating}>
-        <svg width="16" height="16" className={css.starIcon}><use href="/public/sprite.svg#star"></use></svg>
-        <svg width="16" height="16" className={css.starIconGray}><use href="/public/sprite.svg#star"></use></svg>
-        <svg width="16" height="16" className={css.starIconGray}><use href="/public/sprite.svg#star"></use></svg>
-        <svg width="16" height="16" className={css.starIconGray}><use href="/public/sprite.svg#star"></use></svg>
-        <svg width="16" height="16" className={css.starIconGray}><use href="/public/sprite.svg#star"></use></svg>
+        <svg width="16" height="16" className={css.starIcon}><use href="/sprite.svg#star"></use></svg>
+        <svg width="16" height="16" className={css.starIconGray}><use href="/sprite.svg#star"></use></svg>
+        <svg width="16" height="16" className={css.starIconGray}><use href="/sprite.svg#star"></use></svg>
+        <svg width="16" height="16" className={css.starIconGray}><use href="/sprite.svg#star"></use></svg>
+        <svg width="16" height="16" className={css.starIconGray}><use href="/sprite.svg#star"></use></svg>
         <span className={css.ratingValue}>{notice.popularity}</span>
       </div>  
       
@@ -91,7 +91,7 @@ export const ModalNotice = ({ id, onClose }: Props) => {
           {isFavorite ? 'Remove from' : 'Add to'} 
           {!isFavorite && (
             <svg width="18" height="18" className={css.heartIcon}>
-              <use href="/public/sprite.svg#heart-outline"></use>
+              <use href="/sprite.svg#heart-outline"></use>
             </svg>
           )}
         </button>

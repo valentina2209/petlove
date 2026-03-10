@@ -13,7 +13,7 @@ export const UserBar = () => {
         {user?.avatar ? (
           <img src={user.avatar} alt={user.name} className={css.avatar} />
         ) : (
-          <svg className={css.icon}><use href="/public/sprite.svg#userDefault"></use></svg>
+          <svg className={css.icon}><use href="/sprite.svg#userDefault"></use></svg>
         )}
       </div>
       <span className={`${css.userName} ${isHomePage ? css.userWhite : css.userBlack}`}>
