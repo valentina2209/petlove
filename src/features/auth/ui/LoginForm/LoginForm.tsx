@@ -79,7 +79,7 @@ export const LoginForm = () => {
           <div className={css.controls}>
             {isSuccess && (
               <svg className={css.statusIconSuccess}>
-                <use href="/public/sprite.svg#check"></use>
+                <use href="/sprite.svg#check"></use>
               </svg>
             )}
             <button type="button" onClick={() => setShowPassword(!showPassword)} className={css.eyeBtn}>

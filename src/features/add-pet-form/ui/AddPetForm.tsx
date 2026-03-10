@@ -52,9 +52,6 @@ export const AddPetForm = () => {
       console.error('Error adding pet:', error);
     }
   };
-
-  console.log("Помилки валідації:", errors);
-  console.log("Значення полів:", watch());
   
   return (
     <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
@@ -90,7 +87,7 @@ export const AddPetForm = () => {
               className={css.urlInput}
             />
             <label className={css.uploadButton}>
-              Upload photo
+              {t.upload}
               <svg width="18" height="18"><use href={`${sprite}#icon-upload-cloud`} /></svg>
               <input type="file" accept='image/*' onChange={handleFileUpload} hidden />
             </label>
@@ -124,8 +121,6 @@ export const AddPetForm = () => {
                   setValue("birthday", e.target.value, { shouldValidate: true })
                 }}
               />
-              
-
             </div>
           </div>
           
