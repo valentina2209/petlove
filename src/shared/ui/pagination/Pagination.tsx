@@ -33,7 +33,7 @@ export const Pagination = ({
           onClick={() => onChange(1)}
         >
           <svg className={css.arrowIconRight}>
-            <use href="/public/sprite.svg#slider2l"></use>
+            <use href="/sprite.svg#slider2l"></use>
           </svg>
         </button>
         <button
@@ -42,7 +42,7 @@ export const Pagination = ({
           onClick={() => onChange(currentPage - 1)}
         >
           <svg className={css.arrowIconRight}>
-            <use href="/public/sprite.svg#slider1l"></use>
+            <use href="/sprite.svg#slider1l"></use>
           </svg>
         </button>
       </div>
