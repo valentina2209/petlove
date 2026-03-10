@@ -3,7 +3,7 @@ import { RegistrationForm } from "@/features/auth/ui/RegistrationForm/Registrati
 import catImgDesktop from "@/shared/assets/images/desktop/ResDes.png"
 import catImgTablet from "@/shared/assets/images/tablet/RegTab.png"
 import catImgMobile from "@/shared/assets/images/mobile/RegMob.png"
-import catAvatar from "@/shared/assets/images/desktop/cat-avatar.png"
+import catAvatar from "/cat-avatar.png"
 import css from "./RegistrationBlock.module.css"
 
 export const RegistrationBlock = () => {

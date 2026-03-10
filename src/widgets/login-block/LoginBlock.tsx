@@ -3,7 +3,7 @@ import { LoginForm } from "@/features/auth/ui/LoginForm/LoginForm"
 import dogImgDesktop from "@/shared/assets/images/desktop/LogDes.png"
 import dogImgTablet from "@/shared/assets/images/tablet/LogTab.png"
 import dogImgMobile from "@/shared/assets/images/mobile/LogMob.png"
-import dogAvatar from "@/shared/assets/dog-avatar.png"
+import dogAvatar from "/dog-avatar.png"
 import css from "./LoginBlock.module.css"
 
 export const LoginBlock = () => {
