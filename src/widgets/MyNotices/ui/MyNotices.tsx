@@ -37,9 +37,12 @@ export const MyNotices = ({ favorites = [], viewed = [] }: MyNoticesProps) => {
       </div>
         
       {currentItems.length > 0 ? (
-        <ul className={css.list}>
+        <ul className={css.petsList}>
           {currentItems.map((notice) => (
-            <li key={notice._id}>
+            <li
+              key={notice._id}
+              className={css.petItem}
+            >
               <NoticeItem
                 notice={notice}
                 variant={activeTab === "favorites" ? "favorite" : "default"}
