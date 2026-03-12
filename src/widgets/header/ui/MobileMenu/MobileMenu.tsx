@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { NAV_LINKS } from "@/shared/config/navigation";
 import { AuthNav } from "../AuthNav/AuthNav";
 import { UserNav } from "../UserNav/UserNav";
-import sprite from "../../../../../public/sprite.svg";
+import sprite from "/sprite.svg";
 import css from "./MobileMenu.module.css";
 import { ThemeSwitcher } from "@/features/ThemeSwitcher";
 import { LangSwitcher } from "@/features/LangSwitcher/LangSwitcher";

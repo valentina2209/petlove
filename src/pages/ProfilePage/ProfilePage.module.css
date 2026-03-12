@@ -1,5 +1,7 @@
 .section {
   padding-top: 80px;
+  width: 100vw;
+  flex-shrink: 0;
 }
 
 .contentWrapper {
