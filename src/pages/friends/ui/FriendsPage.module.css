@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  padding: 120px 20px 40px 20px;
+  padding-top: 120px;
 }
 
 .title {
@@ -17,7 +17,7 @@
 
 @media (min-width: 768px) {
   .wrapper {
-    padding: 140px 32px 60px 32px;
+    padding-top: 140px;
   }
 
   .title {
@@ -29,7 +29,7 @@
 
 @media (min-width: 1280px) {
   .wrapper {
-    padding: 160px 64px 0 64px;
+    padding-top: 160px;
     gap: 40px;
   }
 }

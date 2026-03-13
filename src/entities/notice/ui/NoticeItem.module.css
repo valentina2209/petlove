@@ -46,6 +46,7 @@
   font-size: 18px;
   font-weight: 700;
   margin: 0;
+  color: #2b2b2b;
 }
 
 .rating {
@@ -54,6 +55,7 @@
   gap: 4px;
   font-size: 14px;
   font-weight: 500;
+  color: #2b2b2b;
 }
 
 .starIcon {
@@ -81,6 +83,7 @@
 .metaValue {
   font-size: 12px;
   font-weight: 500;
+  color: #2b2b2b;
 }
 
 .comment {
@@ -99,6 +102,7 @@
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 16px;
+  color: #2b2b2b;
 }
 
 .actions {
@@ -155,5 +159,5 @@
 }
 
 .favoriteBtn:hover .heartIcon[href*='icon-trash'] {
-  stroke: #ef4444; /* червоний для видалення */
+  stroke: #ef4444;
 }

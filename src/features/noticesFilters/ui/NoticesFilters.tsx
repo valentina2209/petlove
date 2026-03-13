@@ -50,7 +50,7 @@ export const NoticesFilters = () => {
           <SearchField
             value={params.get("keyword") || ""}
             placeholder="Search"
-            onChange={(value) => updateParam("keyword", value)}
+            onSubmit={(value) => updateParam("keyword", value)}
           />
 
         {/* Category */}

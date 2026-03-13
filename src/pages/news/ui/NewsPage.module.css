@@ -42,7 +42,7 @@
 
 @media (min-width: 1280px) {
   .page {
-    padding: 120px 64px 60px 64px;
+    padding: 120px 0 60px 0;
     gap: 40px;
   }
 

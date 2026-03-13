@@ -185,7 +185,7 @@
   .containerForm {
     width: 100%;
     max-width: 654px;
-    padding: 0;
+    padding: 40px 80px;
   }
 
   .form {

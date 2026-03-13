@@ -66,7 +66,7 @@ export const translations = {
     phone: "Телефон",
     readMore: "Детальніше",
     name: "Ім'я",
-    birthday: "День народження",
+    birthday: "Дн",
     sex: "Стать",
     species: "Вид",
     category: "Категорія",

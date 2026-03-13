@@ -1,24 +1,56 @@
+import { useEffect, useState } from "react";
 import css from "./SearchField.module.css";
 
 type Props = {
   value: string;
-  onChange: (value: string) => void;
+  onSubmit: (value: string) => void;
   placeholder?: string;
 };
 
-export const SearchField = ({ value, onChange, placeholder }: Props) => {
+export const SearchField = ({ value, onSubmit, placeholder }: Props) => {
+  const [localValue, setLocalValue] = useState(value);
+
+  useEffect(() => {
+    setLocalValue(value);
+  }, [value])
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    onSubmit(localValue);
+  };
+
+  const handleClear = () => {
+    setLocalValue("");
+    onSubmit(""); 
+  };
+
   return (
-    <div className={css.wrapper}>
+    <form className={css.wrapper} onSubmit={handleSubmit}>
       <input
         className={css.input}
-        value={value}
+        type="text"
+        value={localValue}
         placeholder={placeholder}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => setLocalValue(e.target.value)}
       />
 
-      <svg width="18" height="18" className={css.icon}>
-        <use href="/sprite.svg#search" />
-      </svg>
-    </div>
+      <div className={css.controls}>
+        {/* Хрестик: з'являється тільки якщо в полі щось є */}
+        {localValue && (
+          <button type="button" onClick={handleClear} className={css.clearBtn}>
+            <svg width="18" height="18">
+              <use href="/sprite.svg#icon-close" />
+            </svg>
+          </button>
+        )}
+
+        {/* Лупа: кнопка submit */}
+        <button type="submit" className={css.searchBtn}>
+          <svg width="18" height="18">
+            <use href="/sprite.svg#search" />
+          </svg>
+        </button>
+      </div>
+    </form>
   );
 };
