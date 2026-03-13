@@ -59,7 +59,7 @@
 @media screen and (min-width: 768px) {
   .heroTextSection {
     border-radius: 60px;
-    padding: 130px 0 50px 0;
+    padding: 130px 32px 50px 32px;
   }
 
   .title {
@@ -82,7 +82,7 @@
 
 @media (min-width: 1280px) {
   .heroTextSection {
-    padding: 150px 0 40px 0;
+    padding: 150px 40px 40px 40px;
   }
   .content {
     flex-direction: row;
