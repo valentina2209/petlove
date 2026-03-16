@@ -2,6 +2,7 @@ import { useGetCurrentUserQuery } from "@/entities/user/api/userApi";
 import { UserBlock } from "@/widgets/UserCard/ui/UserBlock/UserBlock";
 import { PetsBlock } from "@/widgets/UserCard/ui/PetsBlock/PetsBlock";
 import { MyNotices } from "@/widgets/MyNotices/ui/MyNotices";
+import { useEffect } from "react";
 
 import css from "./ProfilePage.module.css";
 import { useState } from "react";
@@ -13,11 +14,15 @@ import { useLang } from "@/app/providers/LanguageProvider/LanguageProvider";
 import { translations } from "@/shared/config/i18n/translations";
 
 const ProfilePage = () => {
-  const { data: user, isLoading, isError } = useGetCurrentUserQuery();
+  const { data: user, isLoading, isError, refetch } = useGetCurrentUserQuery();
   const [isModalOpen, setIsModalOpen] = useState(false)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    refetch()
+  }, [refetch])
+  
    const { lang } = useLang()
     const t = translations[lang]
 

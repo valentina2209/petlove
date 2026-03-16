@@ -47,7 +47,7 @@ export const UserBlock = () => {
                     ) : (
                         <div className={css.avatarWrapper}>
                             <img 
-                                src={user.avatar || "/src/shared/assets/default-avatar.png"} 
+                                src={user.avatar || "/default-avatar.png"} 
                                 alt={user.name} 
                                 className={css.avatar} 
                             />
